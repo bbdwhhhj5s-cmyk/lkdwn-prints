@@ -1,43 +1,66 @@
 export default function SectionTitle({
-
-    eyebrow,
-
-    title,
-
-    subtitle
-
+  eyebrow,
+  title,
+  subtitle,
+  align = "center",
 }) {
+  const alignment = {
+    left: "text-left items-start",
+    center: "text-center items-center",
+  };
 
-    return (
+  return (
+    <div
+      className={`
+        flex
+        flex-col
+        ${alignment[align]}
+        max-w-4xl
+        mx-auto
+        mb-20
+      `}
+    >
+      {eyebrow && (
+        <span
+          className="
+            uppercase
+            tracking-[0.35em]
+            text-[11px]
+            text-[#B8965A]
+            mb-5
+          "
+        >
+          {eyebrow}
+        </span>
+      )}
 
-        <div className="max-w-7xl mx-auto px-8 py-24">
+      <h2
+        className="
+          font-heading
+          text-5xl
+          md:text-6xl
+          lg:text-7xl
+          leading-[1.05]
+          tracking-[-0.02em]
+          text-[#F5F2EC]
+        "
+      >
+        {title}
+      </h2>
 
-            <p
-                style={{
-                    letterSpacing: ".35em"
-                }}
-                className="text-[#C9A567] uppercase text-xs mb-6"
-            >
-                {eyebrow}
-            </p>
-
-            <h2
-                style={{
-                    fontFamily: "'Cormorant Garamond', serif"
-                }}
-                className="text-5xl md:text-7xl text-white leading-tight"
-            >
-                {title}
-            </h2>
-
-            <p className="text-[#9AA4AE] text-xl mt-8 max-w-2xl leading-relaxed">
-
-                {subtitle}
-
-            </p>
-
-        </div>
-
-    )
-
+      {subtitle && (
+        <p
+          className="
+            mt-8
+            max-w-2xl
+            text-lg
+            leading-8
+            text-white/65
+          "
+        >
+          {subtitle}
+        </p>
+      )}
+    </div>
+  );
 }
