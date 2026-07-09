@@ -1,10 +1,9 @@
 export default function Container({
   children,
   className = "",
-  as: Component = "div",
 }) {
   return (
-    <Component
+    <div
       className={`
         mx-auto
         w-full
@@ -18,6 +17,6 @@ export default function Container({
       `}
     >
       {children}
-    </Component>
+    </div>
   );
 }

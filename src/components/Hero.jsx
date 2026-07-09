@@ -2,7 +2,7 @@ import Navbar from "./layout/Navbar";
 import Button from "./ui/Button";
 import ScrollIndicator from "./hero/ScrollIndicator";
 
-export default function HeroComponent() {
+export default function Hero() {
 
   return (
 
