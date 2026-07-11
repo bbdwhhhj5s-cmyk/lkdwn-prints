@@ -5,20 +5,23 @@ import Button from "../ui/Button";
 export default function CTASection() {
   return (
     <Section
-      className="bg-[#081019] text-white py-40"
+      className="bg-[#081019] text-white py-44 lg:py-56"
     >
-      <div className="text-center max-w-4xl mx-auto">
+      <div className="mx-auto max-w-4xl text-center">
 
-        <SectionTitle>
-          Bring the Landscape Home.
+        <SectionTitle className="mx-auto">
+          Find the photograph that
+          <br />
+          belongs on your wall.
         </SectionTitle>
 
-        <p className="mt-8 text-lg leading-8 text-[#CFCFCF] max-w-2xl mx-auto">
-          Museum-quality archival photography from Scotland and Europe,
-          created to be lived with for generations.
+        <p className="mx-auto mt-10 max-w-2xl text-[20px] leading-10 text-[#C7CBD1]">
+          Every print is produced using museum-quality archival papers
+          and pigment inks, selected to preserve detail, atmosphere and
+          colour for generations.
         </p>
 
-        <div className="mt-14">
+        <div className="mt-16">
           <Button href="/collections">
             Explore All Collections
           </Button>

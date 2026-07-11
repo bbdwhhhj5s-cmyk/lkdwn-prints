@@ -4,16 +4,23 @@ export default function Section({
   children,
   className = "",
   containerClassName = "",
+  as: Component = "section",
   id,
 }) {
   return (
-    <section
+    <Component
       id={id}
-      className={`relative py-24 md:py-32 ${className}`}
+      className={`
+        relative
+        overflow-hidden
+        py-32
+        lg:py-44
+        ${className}
+      `}
     >
       <Container className={containerClassName}>
         {children}
       </Container>
-    </section>
+    </Component>
   );
 }

@@ -1,6 +1,6 @@
 import SectionTitle from "../ui/SectionTitle";
 import EditorialImage from "../gallery/EditorialImage";
-
+import ExhibitionImage from "../../../components/scotland/ExhibitionImage";
 export default function Scotland() {
 
     return (

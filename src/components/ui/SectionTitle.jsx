@@ -1,66 +1,23 @@
 export default function SectionTitle({
-  eyebrow,
-  title,
-  subtitle,
-  align = "center",
+  children,
+  className = "",
 }) {
-  const alignment = {
-    left: "text-left items-start",
-    center: "text-center items-center",
-  };
-
   return (
-    <div
+    <h2
       className={`
-        flex
-        flex-col
-        ${alignment[align]}
+        font-light
+        text-white
+        tracking-[-0.03em]
+        leading-[0.95]
+        text-5xl
+        md:text-6xl
+        lg:text-7xl
+        xl:text-[5.25rem]
         max-w-4xl
-        mx-auto
-        mb-20
+        ${className}
       `}
     >
-      {eyebrow && (
-        <span
-          className="
-            uppercase
-            tracking-[0.35em]
-            text-[11px]
-            text-[#B8965A]
-            mb-5
-          "
-        >
-          {eyebrow}
-        </span>
-      )}
-
-      <h2
-        className="
-          font-heading
-          text-5xl
-          md:text-6xl
-          lg:text-7xl
-          leading-[1.05]
-          tracking-[-0.02em]
-          text-[#F5F2EC]
-        "
-      >
-        {title}
-      </h2>
-
-      {subtitle && (
-        <p
-          className="
-            mt-8
-            max-w-2xl
-            text-lg
-            leading-8
-            text-white/65
-          "
-        >
-          {subtitle}
-        </p>
-      )}
-    </div>
+      {children}
+    </h2>
   );
 }

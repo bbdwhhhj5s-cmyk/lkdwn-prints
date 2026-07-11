@@ -5,6 +5,7 @@ import EditorialFeature from "../components/home/EditorialFeature";
 import FeaturedCollections from "../components/home/FeaturedCollections";
 import AboutSection from "../components/home/AboutSection";
 import CTASection from "../components/home/CTASection";
+import Footer from "../components/home/Footer.jsx";
 
 export default function Home() {
   return (
@@ -27,6 +28,8 @@ export default function Home() {
       <AboutSection />
 
       <CTASection />
+
+      <Footer />
     </>
   );
 }

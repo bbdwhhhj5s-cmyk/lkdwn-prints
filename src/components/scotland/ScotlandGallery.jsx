@@ -1,0 +1,1 @@
+import galleryData from "../collections/scotland";

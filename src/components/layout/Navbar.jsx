@@ -1,23 +1,77 @@
+"use client";
+
+import Link from "next/link";
+import { useEffect, useState } from "react";
+
 export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black/20 border-b border-white/10">
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-8 py-5">
+    <header
+      className={`
+        fixed
+        top-0
+        left-0
+        right-0
+        z-50
+        transition-all
+        duration-700
+        ${
+          scrolled
+            ? "bg-[#071019]/85 backdrop-blur-xl border-b border-white/10"
+            : "bg-[#071019]/40 backdrop-blur-md"
+        }
+      `}
+    >
+      <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-5 sm:px-8 md:px-12 lg:px-20 xl:px-24">
 
-        <img
-          src="/logo/lkdwn logo white.png"
-          alt="LKDWN Prints"
-          className="h-10"
-        />
+        <Link href="/">
+          <img
+            src="/logo/lkdwn logo white.png"
+            alt="LKDWN Prints"
+            className="w-28 transition-transform duration-500 hover:scale-105"
+          />
+        </Link>
 
-        <nav className="hidden md:flex gap-10 uppercase tracking-[0.25em] text-sm text-white">
+        <nav className="hidden md:flex items-center gap-12">
 
-          <a href="#">Collections</a>
+          <Link
+            href="/collections"
+            className="uppercase tracking-[0.32em] text-[11px] text-white transition-colors hover:text-[#B8965A]"
+          >
+            Collections
+          </Link>
 
-          <a href="#">Journal</a>
+          <Link
+            href="/journal"
+            className="uppercase tracking-[0.32em] text-[11px] text-white transition-colors hover:text-[#B8965A]"
+          >
+            Journal
+          </Link>
 
-          <a href="#">About</a>
+          <Link
+            href="/about"
+            className="uppercase tracking-[0.32em] text-[11px] text-white transition-colors hover:text-[#B8965A]"
+          >
+            About
+          </Link>
 
-          <a href="#">Contact</a>
+          <Link
+            href="/contact"
+            className="uppercase tracking-[0.32em] text-[11px] text-white transition-colors hover:text-[#B8965A]"
+          >
+            Contact
+          </Link>
 
         </nav>
 
@@ -25,4 +79,3 @@ export default function Navbar() {
     </header>
   );
 }
-
