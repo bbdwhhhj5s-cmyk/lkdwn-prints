@@ -1,38 +1,86 @@
-import Section from "../layout/Section";
-import SectionTitle from "../ui/SectionTitle";
-import Button from "../ui/Button";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function AboutSection() {
   return (
-    <Section
-      id="about"
-      className="bg-[#0B1016] text-white py-40 lg:py-48"
-    >
-      <div className="mx-auto max-w-5xl text-center">
+    <section className="py-40">
 
-        <p className="mb-8 uppercase tracking-[0.35em] text-xs text-[#B8965A]">
-          About LKDWN Prints
-        </p>
+      <div className="mx-auto max-w-7xl px-8">
 
-        <SectionTitle className="mx-auto max-w-4xl">
-          Photography collected over a decade of exploration.
-        </SectionTitle>
+        <div className="grid items-center gap-24 lg:grid-cols-[0.8fr_1.2fr]">
 
-        <p className="mx-auto mt-12 max-w-3xl text-[20px] leading-10 text-[#C8CDD2]">
-          LKDWN Prints is the personal archive of Scottish photographer
-          John McHugh. Every photograph has been made with patience,
-          returning to landscapes in changing weather and changing light,
-          before being carefully prepared as a museum-quality archival print
-          designed to be lived with for generations.
-        </p>
+          {/* Portrait */}
 
-        <div className="mt-16">
-          <Button href="/about">
-            Discover the Story
-          </Button>
+          <div className="relative mx-auto w-full max-w-md overflow-hidden rounded-[36px] border border-white/10">
+
+            <div className="relative aspect-[4/5]">
+
+              <Image
+                src="/images/about/photographer.jpg"
+                alt="Photographer"
+                fill
+                sizes="40vw"
+                className="object-cover"
+              />
+
+            </div>
+
+          </div>
+
+          {/* Editorial */}
+
+          <div>
+
+            <p className="text-xs uppercase tracking-[0.45em] text-[#D6B36A]">
+              Photographer's Statement
+            </p>
+
+            <h2 className="mt-6 font-serif text-6xl leading-tight">
+              Looking Beyond
+              <br />
+              the Landscape
+            </h2>
+
+            <div className="mt-10 h-px w-24 bg-[#D6B36A]" />
+
+            <div className="mt-14 space-y-8 text-lg leading-9 text-white/72">
+
+              <p>
+                Landscape photography has never been about collecting
+                locations. It is about returning to places often enough to
+                understand how they change through weather, season and
+                light.
+              </p>
+
+              <p>
+                Many of the photographs within LKDWN Prints have required
+                multiple visits before the conditions felt right. The work
+                is driven by patience rather than distance, allowing each
+                landscape to reveal itself gradually instead of being
+                rushed.
+              </p>
+
+              <p>
+                Every exhibition continues to evolve as new photographs
+                are added, creating collections that grow naturally over
+                time rather than reaching a fixed conclusion.
+              </p>
+
+            </div>
+
+            <Link
+              href="/collections"
+              className="mt-14 inline-flex items-center rounded-full border border-[#D6B36A] px-10 py-5 text-sm uppercase tracking-[0.35em] transition-all duration-300 hover:bg-[#D6B36A] hover:text-black"
+            >
+              Explore the Collections
+            </Link>
+
+          </div>
+
         </div>
 
       </div>
-    </Section>
+
+    </section>
   );
 }

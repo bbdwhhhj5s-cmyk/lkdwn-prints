@@ -1,7 +1,14 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+
+const navigation = [
+  { name: "Home", href: "/" },
+  { name: "Collections", href: "/collections" },
+  { name: "About", href: "/about" },
+];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -11,6 +18,8 @@ export default function Navbar() {
       setScrolled(window.scrollY > 40);
     };
 
+    handleScroll();
+
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
@@ -18,62 +27,45 @@ export default function Navbar() {
 
   return (
     <header
-      className={`
-        fixed
-        top-0
-        left-0
-        right-0
-        z-50
-        transition-all
-        duration-700
-        ${
-          scrolled
-            ? "bg-[#071019]/85 backdrop-blur-xl border-b border-white/10"
-            : "bg-[#071019]/40 backdrop-blur-md"
-        }
-      `}
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "border-b border-white/10 bg-[#081722]/95 backdrop-blur-lg"
+          : "bg-transparent"
+      }`}
     >
-      <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-5 sm:px-8 md:px-12 lg:px-20 xl:px-24">
+      <div className="mx-auto flex h-[88px] max-w-7xl items-center justify-between px-8">
 
-        <Link href="/">
-          <img
+        {/* Logo */}
+        <Link href="/" className="flex items-center">
+          <Image
             src="/logo/lkdwn logo white.png"
             alt="LKDWN Prints"
-            className="w-28 transition-transform duration-500 hover:scale-105"
+            width={180}
+            height={60}
+            priority
+            className="h-auto w-auto"
           />
         </Link>
 
-        <nav className="hidden md:flex items-center gap-12">
-
-          <Link
-            href="/collections"
-            className="uppercase tracking-[0.32em] text-[11px] text-white transition-colors hover:text-[#B8965A]"
-          >
-            Collections
-          </Link>
-
-          <Link
-            href="/journal"
-            className="uppercase tracking-[0.32em] text-[11px] text-white transition-colors hover:text-[#B8965A]"
-          >
-            Journal
-          </Link>
-
-          <Link
-            href="/about"
-            className="uppercase tracking-[0.32em] text-[11px] text-white transition-colors hover:text-[#B8965A]"
-          >
-            About
-          </Link>
-
-          <Link
-            href="/contact"
-            className="uppercase tracking-[0.32em] text-[11px] text-white transition-colors hover:text-[#B8965A]"
-          >
-            Contact
-          </Link>
-
+        {/* Navigation */}
+        <nav className="hidden items-center gap-10 md:flex">
+          {navigation.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="text-xs uppercase tracking-[0.35em] text-white/70 transition-colors duration-300 hover:text-[#D6B36A]"
+            >
+              {item.name}
+            </Link>
+          ))}
         </nav>
+
+        {/* Basket */}
+        <button
+          className="rounded-full border border-white/10 px-5 py-3 text-xs uppercase tracking-[0.35em] text-white/70 transition-all duration-300 hover:border-[#D6B36A] hover:text-[#D6B36A]"
+        >
+          Basket (0)
+        </button>
 
       </div>
     </header>

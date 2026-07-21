@@ -1,99 +1,95 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
-    <footer className="bg-[#05080D] border-t border-white/10">
-      <div className="max-w-[1600px] mx-auto px-6 sm:px-8 md:px-12 lg:px-20 xl:px-24">
+    <footer className="border-t border-white/10 bg-[#090D12]">
 
-        <div className="py-24 grid lg:grid-cols-[1.5fr_1fr_1fr] gap-16">
+      <div className="mx-auto max-w-7xl px-8 py-24">
 
-          {/* Brand */}
-          <div>
-            <img
-              src="/logo/lkdwn logo white.png"
-              alt="LKDWN Prints"
-              className="w-40 mb-8"
-            />
+        {/* Logo */}
 
-            <p className="max-w-md text-[#B7B7B7] leading-8">
-              Fine art landscape photography from Scotland and Europe,
-              printed using museum-quality archival papers and pigment inks.
-            </p>
-          </div>
+        <div className="flex justify-center">
 
-          {/* Navigation */}
-          <div>
-
-            <h3 className="uppercase tracking-[0.35em] text-[#B8965A] text-xs mb-8">
-              Explore
-            </h3>
-
-            <nav className="space-y-4">
-
-              <Link href="/collections" className="block text-white hover:text-[#B8965A] transition-colors">
-                Collections
-              </Link>
-
-              <Link href="/journal" className="block text-white hover:text-[#B8965A] transition-colors">
-                Journal
-              </Link>
-
-              <Link href="/about" className="block text-white hover:text-[#B8965A] transition-colors">
-                About
-              </Link>
-
-              <Link href="/contact" className="block text-white hover:text-[#B8965A] transition-colors">
-                Contact
-              </Link>
-
-            </nav>
-
-          </div>
-
-          {/* Contact */}
-          <div>
-
-            <h3 className="uppercase tracking-[0.35em] text-[#B8965A] text-xs mb-8">
-              Connect
-            </h3>
-
-            <div className="space-y-4">
-
-              <a
-                href="mailto:info@lkdwn.co.uk"
-                className="block text-white hover:text-[#B8965A] transition-colors"
-              >
-                info@lkdwn.co.uk
-              </a>
-
-              <a
-                href="https://instagram.com/lkdwnprints"
-                target="_blank"
-                rel="noreferrer"
-                className="block text-white hover:text-[#B8965A] transition-colors"
-              >
-                Instagram
-              </a>
-
-            </div>
-
-          </div>
+          <Image
+            src="/logo/lkdwn logo white.png"
+            alt="LKDWN Prints"
+            width={180}
+            height={50}
+            priority={false}
+          />
 
         </div>
 
-        <div className="border-t border-white/10 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        {/* Quote */}
 
-          <p className="text-sm text-[#7D7D7D]">
-            © {new Date().getFullYear()} LKDWN Prints. All Rights Reserved.
+        <div className="mx-auto mt-14 max-w-3xl text-center">
+
+          <p className="font-serif text-3xl leading-relaxed text-white">
+
+            "Every photograph begins long before
+            the shutter is released."
+
           </p>
 
-          <p className="text-sm text-[#7D7D7D]">
-            Designed & Photographed by John McHugh
+        </div>
+
+        {/* Navigation */}
+
+        <nav className="mt-20 flex flex-wrap justify-center gap-10 text-sm uppercase tracking-[0.35em] text-white/60">
+
+          <Link
+            href="/collections"
+            className="transition-colors hover:text-[#D6B36A]"
+          >
+            Collections
+          </Link>
+
+          <Link
+            href="/about"
+            className="transition-colors hover:text-[#D6B36A]"
+          >
+            About
+          </Link>
+
+          <Link
+            href="/contact"
+            className="transition-colors hover:text-[#D6B36A]"
+          >
+            Contact
+          </Link>
+
+          <Link
+            href="/journal"
+            className="transition-colors hover:text-[#D6B36A]"
+          >
+            Journal
+          </Link>
+
+        </nav>
+
+        {/* Divider */}
+
+        <div className="my-20 h-px bg-white/10" />
+
+        {/* Bottom */}
+
+        <div className="flex flex-col items-center justify-between gap-6 text-center text-sm text-white/45 lg:flex-row">
+
+          <p>
+            © {year} LKDWN Prints. All Rights Reserved.
+          </p>
+
+          <p>
+            Fine Art Landscape Photography • Printed to Museum Standards
           </p>
 
         </div>
 
       </div>
+
     </footer>
   );
 }

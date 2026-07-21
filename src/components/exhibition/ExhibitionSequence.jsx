@@ -1,17 +1,27 @@
+import CollectionChapter from "./CollectionChapter";
 import ExhibitionImage from "./ExhibitionImage";
 import StoryBlock from "./StoryBlock";
 import QuoteBlock from "./QuoteBlock";
 import Diptych from "./Diptych";
 import FullscreenImage from "./FullscreenImage";
-import scotland from "../../data/collections/scotland";
-<ExhibitionSequence
-    collection={scotland}
-/>
-export default function ExhibitionSequence() {
+import SectionBreak from "./SectionBreak";
+import PullQuote from "./PullQuote";
+
+export default function ExhibitionSequence({ collection }) {
   return (
     <>
-      {galleryData.map((section, index) => {
+      {collection.map((section, index) => {
         switch (section.type) {
+          case "chapter":
+            return (
+              <CollectionChapter
+                key={index}
+                number={section.number}
+                title={section.title}
+                subtitle={section.subtitle}
+              />
+            );
+
           case "image":
             return (
               <ExhibitionImage
@@ -26,6 +36,8 @@ export default function ExhibitionSequence() {
                 key={index}
                 heading={section.heading}
                 text={section.text}
+                image={section.image}
+                reverse={section.reverse}
               />
             );
 
@@ -54,6 +66,23 @@ export default function ExhibitionSequence() {
                 image={section.image}
                 title={section.title}
                 location={section.location}
+              />
+            );
+
+          case "section":
+            return (
+              <SectionBreak
+                key={index}
+                title={section.title}
+                text={section.text}
+              />
+            );
+
+          case "pullquote":
+            return (
+              <PullQuote
+                key={index}
+                quote={section.quote}
               />
             );
 

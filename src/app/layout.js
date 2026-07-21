@@ -1,30 +1,36 @@
-import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-heading",
-});
+import { Manrope, Cormorant_Garamond } from "next/font/google";
 
-const manrope = Manrope({
+import Header from "@/components/layout/Header";
+
+const bodyFont = Manrope({
   subsets: ["latin"],
   variable: "--font-body",
 });
 
+const headingFont = Cormorant_Garamond({
+  subsets: ["latin"],
+  variable: "--font-heading",
+  weight: ["400", "500", "600", "700"],
+});
+
 export const metadata = {
   title: "LKDWN Prints",
-  description: "Museum-quality fine art photography across Scotland and Europe.",
+  description: "Fine Art Photography",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      className={`${cormorant.variable} ${manrope.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">
-        {children}
+    <html lang="en">
+      <body
+        className={`${bodyFont.variable} ${headingFont.variable} antialiased`}
+      >
+        <Header />
+
+        <main className="pt-20">
+          {children}
+        </main>
       </body>
     </html>
   );

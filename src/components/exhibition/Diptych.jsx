@@ -5,11 +5,11 @@ export default function Diptych({
   right,
 }) {
   return (
-    <section className="bg-[#090D12] py-28">
+    <section className="bg-[#090D12] py-32">
 
       <div className="max-w-7xl mx-auto px-8">
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-10">
 
           {/* LEFT */}
 
@@ -20,22 +20,22 @@ export default function Diptych({
               alt={left.title}
               className="
                 w-full
-                h-[80vh]
+                h-[82vh]
                 object-cover
                 transition-transform
-                duration-[2500ms]
+                duration-[2200ms]
                 ease-out
-                group-hover:scale-[1.03]
+                group-hover:scale-[1.02]
               "
             />
 
-            <div className="pt-6">
+            <div className="pt-8">
 
-              <p className="text-[#B8965A] uppercase tracking-[0.35em] text-xs mb-3">
+              <p className="text-[#B8965A] uppercase tracking-[0.40em] text-xs mb-3">
                 {left.location}
               </p>
 
-              <h3 className="text-3xl font-serif text-white">
+              <h3 className="font-serif text-3xl lg:text-4xl text-white leading-tight">
                 {left.title}
               </h3>
 
@@ -52,22 +52,22 @@ export default function Diptych({
               alt={right.title}
               className="
                 w-full
-                h-[80vh]
+                h-[82vh]
                 object-cover
                 transition-transform
-                duration-[2500ms]
+                duration-[2200ms]
                 ease-out
-                group-hover:scale-[1.03]
+                group-hover:scale-[1.02]
               "
             />
 
-            <div className="pt-6">
+            <div className="pt-8">
 
-              <p className="text-[#B8965A] uppercase tracking-[0.35em] text-xs mb-3">
+              <p className="text-[#B8965A] uppercase tracking-[0.40em] text-xs mb-3">
                 {right.location}
               </p>
 
-              <h3 className="text-3xl font-serif text-white">
+              <h3 className="font-serif text-3xl lg:text-4xl text-white leading-tight">
                 {right.title}
               </h3>
 
