@@ -47,6 +47,7 @@ const mockupGalleries: Partial<Record<string, string>> = {
   "rue-de-buci": "rue-de-buci",
   "beneath-the-pyramid": "beneath-the-pyramid",
   "arc-against-the-storm": "arc-against-the-storm",
+  metropolitain: "metropolitain",
 };
 
 const galleryForArtwork = (slug: string, image: string) => {
@@ -299,7 +300,7 @@ const parisArtworks: Artwork[] = [
     slug: "metropolitain",
     title: "Métropolitain",
     location: "Paris Métro",
-    image: "/images/paris/paris-8.jpg",
+    image: "/images/paris/metropolitain.jpg",
     description:
       "A classic Art Nouveau Métropolitain sign reaches into a turbulent Paris sky.",
     orientation: "portrait",
