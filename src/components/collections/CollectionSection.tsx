@@ -1,20 +1,34 @@
+import Link from "next/link";
 import type { Collection } from "@/data/catalog";
 import ArtworkCard from "@/components/gallery/ArtworkCard";
+import { routes } from "@/lib/routes";
 
 type CollectionSectionProps = {
   collection: Collection;
+  pageHeading?: boolean;
 };
 
-export default function CollectionSection({ collection }: CollectionSectionProps) {
+export default function CollectionSection({
+  collection,
+  pageHeading = false,
+}: CollectionSectionProps) {
+  const Heading = pageHeading ? "h1" : "h2";
+
   return (
     <section id={collection.slug} className="scroll-mt-24 py-20">
       <div className="mb-12 max-w-2xl">
         <p className="mb-5 text-xs uppercase tracking-[0.35em] text-[#C9A567]">
-          {collection.name}
+          {pageHeading ? (
+            collection.name
+          ) : (
+            <Link href={routes.collection(collection.slug)}>
+              {collection.name}
+            </Link>
+          )}
         </p>
-        <h2 className="heading text-5xl leading-tight text-white md:text-7xl">
+        <Heading className="heading text-5xl leading-tight text-white md:text-7xl">
           {collection.title}
-        </h2>
+        </Heading>
         <p className="mt-7 text-lg leading-relaxed text-[#9AA4AE]">
           {collection.description}
         </p>
