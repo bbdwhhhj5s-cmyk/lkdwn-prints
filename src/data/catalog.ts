@@ -48,6 +48,7 @@ const mockupGalleries: Partial<Record<string, string>> = {
   "beneath-the-pyramid": "beneath-the-pyramid",
   "arc-against-the-storm": "arc-against-the-storm",
   metropolitain: "metropolitain",
+  "eiffel-sky": "eiffel-sky",
   "paris-rooftops": "paris-rooftops",
 };
 
