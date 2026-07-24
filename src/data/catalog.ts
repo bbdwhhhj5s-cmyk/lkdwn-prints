@@ -39,6 +39,7 @@ const mockupGalleries: Partial<Record<string, string>> = {
   "highland-reflections": "highland-reflections",
   "highland-light": "highland-light",
   "winter-light": "winter-light",
+  "mountain-silence": "mountain-silence",
 };
 
 const galleryForArtwork = (slug: string, image: string) => {
@@ -195,7 +196,7 @@ const scotlandArtworks: Artwork[] = [
     slug: "mountain-silence",
     title: "Mountain Silence",
     location: "Scottish Highlands",
-    image: "/images/scotland/scotland-11.jpg",
+    image: "/images/scotland/scotland-7.jpg",
     description:
       "A quiet study of Scotland's changing mountain light.",
   }),
@@ -258,7 +259,7 @@ export const artworkAliases: Record<string, string> = {
   "scotland-4": "glenfinnan-monument",
   "scotland-5": "castle-stalker",
   "scotland-6": "glasgow-green",
-  "scotland-7": "highland-reflections",
+  "scotland-7": "mountain-silence",
   "scotland-8": "winter-light",
   "scotland-9": "the-clyde",
   "scotland-10": "highland-light",
