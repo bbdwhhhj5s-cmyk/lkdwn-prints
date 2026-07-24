@@ -1,5 +1,6 @@
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
+import CartProvider from "@/components/cart/CartProvider";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -53,7 +54,7 @@ export default function RootLayout({ children }) {
       className={`${cormorant.variable} ${manrope.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        {children}
+        <CartProvider>{children}</CartProvider>
       </body>
     </html>
   );

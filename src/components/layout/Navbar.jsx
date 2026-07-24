@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { routes } from "../../lib/routes";
+import CartLink from "../cart/CartLink";
 
 export default function Navbar() {
   return (
@@ -25,6 +26,8 @@ export default function Navbar() {
           <a href="#">About</a>
 
           <a href="#">Contact</a>
+
+          <CartLink />
 
         </nav>
 

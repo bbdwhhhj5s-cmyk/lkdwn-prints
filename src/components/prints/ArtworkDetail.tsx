@@ -3,6 +3,7 @@ import Image from "next/image";
 import type { Artwork } from "@/data/catalog";
 import { getAdjacentArtworks } from "@/data/catalog";
 import { routes } from "@/lib/routes";
+import ProductConfigurator from "@/components/store/ProductConfigurator";
 
 type ArtworkDetailProps = {
   artwork: Artwork;
@@ -41,6 +42,7 @@ export default function ArtworkDetail({ artwork }: ArtworkDetailProps) {
             <p className="mt-7 leading-relaxed text-[#9AA4AE]">
               {artwork.description}
             </p>
+            <ProductConfigurator artwork={artwork} />
           </div>
         </div>
 
