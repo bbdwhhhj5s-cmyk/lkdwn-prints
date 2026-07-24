@@ -44,6 +44,7 @@ const mockupGalleries: Partial<Record<string, string>> = {
   "eiffel-ironwork": "eiffel-ironwork",
   "passage-into-light": "passage-into-light",
   "across-the-seine": "across-the-seine",
+  "rue-de-buci": "rue-de-buci",
 };
 
 const galleryForArtwork = (slug: string, image: string) => {
@@ -263,7 +264,7 @@ const parisArtworks: Artwork[] = [
     image: "/images/paris/paris-4.jpg",
     description:
       "A spontaneous street-level view of daily life along the lively Rue de Buci.",
-    orientation: "portrait",
+    orientation: "landscape",
   }),
   parisArtwork({
     slug: "beneath-the-pyramid",
