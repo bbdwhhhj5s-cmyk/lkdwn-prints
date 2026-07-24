@@ -42,6 +42,7 @@ const mockupGalleries: Partial<Record<string, string>> = {
   "mountain-silence": "mountain-silence",
   "the-clyde": "the-clyde",
   "eiffel-ironwork": "eiffel-ironwork",
+  "passage-into-light": "passage-into-light",
 };
 
 const galleryForArtwork = (slug: string, image: string) => {
