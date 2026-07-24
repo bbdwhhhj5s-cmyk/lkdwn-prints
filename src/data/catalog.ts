@@ -281,7 +281,7 @@ const parisArtworks: Artwork[] = [
     slug: "arc-against-the-storm",
     title: "Arc Against the Storm",
     location: "Place Charles de Gaulle",
-    image: "/images/paris/paris-6.jpg",
+    image: "/images/paris/arc-against-the-storm.jpg",
     description:
       "The Arc de Triomphe stands in stark monochrome beneath a gathering storm.",
     orientation: "portrait",
