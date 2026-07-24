@@ -147,6 +147,9 @@ export const getArtwork = (slug: string) =>
 export const getCollection = (slug: string) =>
   collections.find((collection) => collection.slug === slug);
 
+export const getCollectionSelection = (collection: Collection) =>
+  collection.artworks.slice(0, 12);
+
 export const getAdjacentArtworks = (artwork: Artwork) => {
   const collection = getCollection(artwork.collection);
   const index = collection?.artworks.findIndex(({ slug }) => slug === artwork.slug) ?? -1;
