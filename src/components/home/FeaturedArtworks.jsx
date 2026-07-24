@@ -70,7 +70,7 @@ export default function FeaturedArtworks() {
 
             <Link
               key={artwork.image}
-              href={`/product/${artwork.slug}`}
+              href={`/print/${artwork.slug}`}
               className={`group overflow-hidden rounded-[32px] border border-white/10 bg-[#0D1218]
                 ${
                   artwork.size === "large"

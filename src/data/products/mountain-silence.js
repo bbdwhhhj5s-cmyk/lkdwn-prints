@@ -26,12 +26,16 @@ const product = {
   hero: "/images/scotland/scotland-7.jpg",
 
   gallery: [
-    "/images/scotland/scotland-7.jpg",
-    "/images/scotland/scotland-7.jpg",
-    "/images/scotland/scotland-7.jpg",
-    "/images/scotland/scotland-7.jpg",
-    "/images/scotland/scotland-7.jpg",
-  ],
+  "/images/scotland/scotland-1.jpg",
+
+  "/images/mockups/rannoch-moor/living-room.jpg",
+
+  "/images/mockups/rannoch-moor/boutique-hotel.jpg",
+
+  "/images/mockups/rannoch-moor/executive-office.jpg",
+
+  "/images/mockups/rannoch-moor/collector-detail.jpg",
+],
 
   description:
     "A quiet study of Scotland's changing mountain light.",

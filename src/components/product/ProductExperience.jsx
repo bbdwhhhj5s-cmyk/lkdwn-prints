@@ -20,10 +20,11 @@ export default function ProductExperience({
 
         <div className="grid gap-20 lg:grid-cols-[1.25fr_0.75fr]">
 
-          <ProductGallery
-            images={artwork.gallery}
-            title={artwork.title}
-          />
+         <ProductGallery
+  images={artwork.gallery}
+  title={artwork.title}
+  orientation={artwork.orientation}
+/>
 
           <PurchasePanel product={artwork} />
 

@@ -25,13 +25,13 @@ const product = {
 
   hero: "/images/scotland/scotland-3.jpg",
 
-  gallery: [
-    "/images/scotland/scotland-3.jpg",
-    "/images/scotland/scotland-3.jpg",
-    "/images/scotland/scotland-3.jpg",
-    "/images/scotland/scotland-3.jpg",
-    "/images/scotland/scotland-3.jpg",
-  ],
+gallery: [
+  "/images/scotland/scotland-3.jpg",
+  "/images/mockups/light-after-the-storm/living-room.jpg",
+  "/images/mockups/light-after-the-storm/boutique-hotel.jpg",
+  "/images/mockups/light-after-the-storm/executive-office.jpg",
+  "/images/mockups/light-after-the-storm/collector-detail.jpg",
+],
 
   description:
     "Sunlight briefly broke through heavy cloud following an afternoon storm.",

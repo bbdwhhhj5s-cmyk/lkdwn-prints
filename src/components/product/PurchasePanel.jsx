@@ -10,7 +10,7 @@ export default function PurchasePanel({ product }) {
   return (
     <aside className="sticky top-12">
 
-      <div className="overflow-hidden rounded-[36px] border border-white/10 bg-[#0D1218]">
+      <div className="overflow-hidden rounded-[36px] border border-white/10 bg-[#0D1218] shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
 
         {/* Header */}
 
@@ -20,7 +20,7 @@ export default function PurchasePanel({ product }) {
             Fine Art Print
           </p>
 
-          <h1 className="mt-5 font-serif text-5xl leading-tight">
+          <h1 className="mt-5 font-serif text-5xl leading-tight text-white">
             {product.title}
           </h1>
 
@@ -38,20 +38,17 @@ export default function PurchasePanel({ product }) {
             Edition
           </p>
 
-          <div className="mt-6 flex items-center justify-between">
+          <div className="mt-6">
 
-            <div>
+            <h3 className="font-serif text-2xl text-white">
+              {product.edition}
+            </h3>
 
-              <h3 className="font-serif text-2xl">
-                {product.edition}
-              </h3>
-
-              <p className="mt-3 leading-8 text-white/60">
-                Printed individually using archival pigment inks on
-                museum-grade Hahnemühle Photo Rag 308gsm.
-              </p>
-
-            </div>
+            <p className="mt-4 leading-8 text-white/60">
+              Printed individually using archival pigment inks on
+              Hahnemühle Photo Rag 308gsm for exceptional longevity,
+              colour accuracy and museum-quality presentation.
+            </p>
 
           </div>
 
@@ -61,11 +58,21 @@ export default function PurchasePanel({ product }) {
 
         <div className="border-b border-white/10 p-10">
 
-          <p className="mb-8 text-xs uppercase tracking-[0.35em] text-[#D6B36A]">
-            Select Print Size
-          </p>
+          <div className="flex items-center justify-between">
 
-          <div className="grid grid-cols-2 gap-4">
+            <p className="text-xs uppercase tracking-[0.35em] text-[#D6B36A]">
+              Select Print Size
+            </p>
+
+            {selectedSize && (
+              <span className="text-xs uppercase tracking-[0.25em] text-white/40">
+                {selectedSize}
+              </span>
+            )}
+
+          </div>
+
+          <div className="mt-8 grid grid-cols-2 gap-4">
 
             {product.printSizes.map((size) => (
 
@@ -76,7 +83,7 @@ export default function PurchasePanel({ product }) {
                 className={`rounded-2xl border px-6 py-5 text-sm uppercase tracking-[0.3em] transition-all duration-300 ${
                   selectedSize === size
                     ? "border-[#D6B36A] bg-[#D6B36A] text-black"
-                    : "border-white/10 bg-white/[0.02] hover:border-[#D6B36A]/60"
+                    : "border-white/10 bg-white/[0.02] text-white hover:border-[#D6B36A]/60 hover:bg-white/[0.04]"
                 }`}
               >
                 {size}
@@ -96,24 +103,24 @@ export default function PurchasePanel({ product }) {
             Specifications
           </p>
 
-          <div className="mt-8 space-y-6 text-white/70">
+          <div className="mt-8 space-y-6">
 
-            <div className="flex justify-between">
+            <div className="flex items-center justify-between text-white/70">
               <span>Paper</span>
-              <span>{product.paper}</span>
+              <span className="text-right">{product.paper}</span>
             </div>
 
-            <div className="flex justify-between">
+            <div className="flex items-center justify-between text-white/70">
               <span>Print Process</span>
               <span>Museum Giclée</span>
             </div>
 
-            <div className="flex justify-between">
+            <div className="flex items-center justify-between text-white/70">
               <span>Production</span>
               <span>Made to Order</span>
             </div>
 
-            <div className="flex justify-between">
+            <div className="flex items-center justify-between text-white/70">
               <span>Dispatch</span>
               <span>3–5 Working Days</span>
             </div>
@@ -122,7 +129,7 @@ export default function PurchasePanel({ product }) {
 
         </div>
 
-        {/* Quality */}
+        {/* Included */}
 
         <div className="border-b border-white/10 p-10">
 
@@ -133,9 +140,12 @@ export default function PurchasePanel({ product }) {
           <ul className="mt-8 space-y-5 text-white/70">
 
             <li>✓ Museum-quality archival printing</li>
-            <li>✓ Professional colour managed workflow</li>
-            <li>✓ Carefully packaged for shipping</li>
-            <li>✓ Certificate of authenticity</li>
+
+            <li>✓ Professional colour-managed workflow</li>
+
+            <li>✓ Carefully packaged for safe worldwide shipping</li>
+
+            <li>✓ Certificate of authenticity included</li>
 
           </ul>
 
@@ -153,13 +163,14 @@ export default function PurchasePanel({ product }) {
               px-8
               py-5
               text-sm
-              font-medium
+              font-semibold
               uppercase
               tracking-[0.35em]
               text-black
               transition-all
               duration-300
-              hover:scale-[1.02]
+              hover:brightness-105
+              hover:shadow-[0_0_30px_rgba(214,179,106,0.35)]
             "
           >
             Add to Collection
@@ -177,9 +188,11 @@ export default function PurchasePanel({ product }) {
               text-sm
               uppercase
               tracking-[0.35em]
+              text-white
               transition-all
               duration-300
               hover:border-[#D6B36A]
+              hover:bg-white/[0.03]
             "
           >
             Framing Information
@@ -187,7 +200,7 @@ export default function PurchasePanel({ product }) {
 
           <p className="mt-8 text-center text-sm leading-7 text-white/45">
             Every print is produced individually to maintain the highest
-            possible quality and colour accuracy.
+            standards of craftsmanship, colour accuracy and archival quality.
           </p>
 
         </div>

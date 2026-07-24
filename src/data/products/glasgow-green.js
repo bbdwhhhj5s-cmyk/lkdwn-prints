@@ -23,15 +23,15 @@ const product = {
 
   featured: false,
 
-  hero: "/images/scotland/scotland-25.jpg",
+  hero: "/images/scotland/glasgow-green.jpg",
 
-  gallery: [
-    "/images/scotland/scotland-25.jpg",
-    "/images/scotland/scotland-25.jpg",
-    "/images/scotland/scotland-25.jpg",
-    "/images/scotland/scotland-25.jpg",
-    "/images/scotland/scotland-5.jpg",
-  ],
+gallery: [
+  "/images/scotland/glasgow-green.jpg",
+  "/images/mockups/glasgow-green/living-room.jpg",
+  "/images/mockups/glasgow-green/boutique-hotel.jpg",
+  "/images/mockups/glasgow-green/executive-office.jpg",
+  "/images/mockups/glasgow-green/collector-detail.jpg",
+],
 
   description:
     "Autumn colour surrounding one of Glasgow's most historic public parks.",

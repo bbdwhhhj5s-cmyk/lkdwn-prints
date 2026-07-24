@@ -25,13 +25,13 @@ const product = {
 
   hero: "/images/scotland/scotland-2.jpg",
 
-  gallery: [
-    "/images/scotland/scotland-2.jpg",
-    "/images/scotland/scotland-2.jpg",
-    "/images/scotland/scotland-2.jpg",
-    "/images/scotland/scotland-2.jpg",
-    "/images/scotland/scotland-2.jpg",
-  ],
+ gallery: [
+  "/images/scotland/scotland-2.jpg",
+  "/images/mockups/castle-stalker-by-moonlight/living-room.jpg",
+  "/images/mockups/castle-stalker-by-moonlight/boutique-hotel.jpg",
+  "/images/mockups/castle-stalker-by-moonlight/executive-office.jpg",
+  "/images/mockups/castle-stalker-by-moonlight/collector-detail.jpg",
+],
 
   description:
     "Castle Stalker standing in silence beneath an evening sky.",

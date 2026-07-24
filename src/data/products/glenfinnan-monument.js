@@ -27,10 +27,10 @@ hero: "/images/scotland/glenfinnan-monument.jpg",
 
 gallery: [
   "/images/scotland/glenfinnan-monument.jpg",
-  "/images/scotland/glenfinnan-monument.jpg",
-  "/images/scotland/glenfinnan-monument.jpg",
-  "/images/scotland/glenfinnan-monument.jpg",
-  "/images/scotland/glenfinnan-monument.jpg",
+  "/images/mockups/glenfinnan-monument/living-room.jpg",
+  "/images/mockups/glenfinnan-monument/boutique-hotel.jpg",
+  "/images/mockups/glenfinnan-monument/executive-office.jpg",
+  "/images/mockups/glenfinnan-monument/collector-detail.jpg",
 ],
 
   description:

@@ -23,18 +23,18 @@ const product = {
 
   featured: true,
 
-  hero: "/images/scotland/scotland-12.jpg",
+  hero: "/images/scotland/castle-stalker-winter.jpg",
 
-  gallery: [
-    "/images/scotland/scotland-12.jpg",
-    "/images/scotland/scotland-12.jpg",
-    "/images/scotland/scotland-12.jpg",
-    "/images/scotland/scotland-12.jpg",
-    "/images/scotland/scotland-12.jpg",
-  ],
+gallery: [
+  "/images/scotland/castle-stalker-winter.jpg",
+  "/images/mockups/castle-stalker/living-room.jpg",
+  "/images/mockups/castle-stalker/boutique-hotel.jpg",
+  "/images/mockups/castle-stalker/executive-office.jpg",
+  "/images/mockups/castle-stalker/collector-detail.jpg",
+],
 
-  description:
-    "Castle Stalker reflected in calm coastal waters beneath a dramatic Highland sky.",
+description:
+  "Castle Stalker reflected in calm coastal waters beneath a dramatic Highland sky.",
 
   story: `
 Castle Stalker stands on its small tidal island in Loch Laich, one of Scotland's most recognisable castles.

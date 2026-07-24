@@ -67,7 +67,7 @@ export default function ImageDetails({
 
               {slug ? (
                 <Link
-                  href={`/product/${slug}`}
+                  href={`/print/${slug}`}
                   className="inline-flex mt-12 border border-[#D6B36A] px-8 py-4 uppercase tracking-[0.25em] text-xs text-[#D6B36A] transition-all duration-500 hover:bg-[#D6B36A] hover:text-[#090D12]"
                 >
                   View Print

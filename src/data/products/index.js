@@ -10,7 +10,12 @@ import winterLight from "./winter-light";
 import theClyde from "./the-clyde";
 import highlandLight from "./highland-light";
 import mountainSilence from "./mountain-silence";
-
+console.log("Loading products...");
+console.log({
+  buachailleEtiveMor,
+  rannochMoor,
+  castleStalkerByMoonlight,
+});
 export const products = {
   "buachaille-etive-mor": buachailleEtiveMor,
   "rannoch-moor": rannochMoor,

@@ -8,7 +8,7 @@ export default function PreviousNext({ previous, next }) {
 
         {previous ? (
           <Link
-            href={`/product/${previous.slug}`}
+          href={`/prints/${slug}`}
             className="group overflow-hidden rounded-2xl border border-white/10 transition hover:border-[#D6B36A]"
           >
             <div className="relative h-64">
@@ -45,7 +45,7 @@ export default function PreviousNext({ previous, next }) {
 
         {next ? (
           <Link
-            href={`/product/${next.slug}`}
+            href={`/print/${next.slug}`}
             className="group overflow-hidden rounded-2xl border border-white/10 transition hover:border-[#D6B36A]"
           >
             <div className="relative h-64">

@@ -155,11 +155,11 @@ const galleryData = [
   {
     type: "image",
     number: "06",
-    slug: "castle-stalker-winter",
+    slug: "castle-stalker",
     title: "Castle Stalker",
     collection: "Scotland",
     location: "Appin",
-    image: "/images/scotland/scotland-4.jpg",
+    image: "/images/scotland/castle-stalker-winter.jpg",
 
     description:
       "Castle Stalker reflected in calm coastal waters beneath a dramatic Highland sky.",

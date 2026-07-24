@@ -25,13 +25,13 @@ const product = {
 
   hero: "/images/scotland/glencoe.jpg",
 
-  gallery: [
-    "/images/scotland/glencoe.jpg",
-    "/images/scotland/scotland-23.jpg",
-    "/images/scotland/scotland-23.jpg",
-    "/images/scotland/scotland-23.jpg",
-    "/images/scotland/scotland-23.jpg",
-  ],
+gallery: [
+  "/images/scotland/glencoe.jpg",
+  "/images/mockups/buachaille-etive-mor/living-room.jpg",
+  "/images/mockups/buachaille-etive-mor/boutique-hotel.jpg",
+  "/images/mockups/buachaille-etive-mor/executive-office.jpg",
+  "/images/mockups/buachaille-etive-mor/collector-detail.jpg",
+],
 
   description:
     "Morning mist rolled across Rannoch Moor before Buachaille Etive Mòr emerged from cloud, revealing one of Scotland's most iconic mountains in the quiet light of dawn.",
