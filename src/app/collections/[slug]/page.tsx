@@ -3,7 +3,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import CollectionSection from "@/components/collections/CollectionSection";
 import Navbar from "@/components/layout/Navbar";
-import { collections, getCollection } from "@/data/catalog";
+import {
+  collections,
+  getCollection,
+  getCollectionSelection,
+} from "@/data/catalog";
 import { routes } from "@/lib/routes";
 
 export const dynamicParams = false;
@@ -62,7 +66,11 @@ export default async function CollectionPage({
           >
             ← All collections
           </Link>
-          <CollectionSection collection={collection} pageHeading />
+          <CollectionSection
+            collection={collection}
+            artworks={getCollectionSelection(collection)}
+            pageHeading
+          />
         </div>
       </main>
     </>

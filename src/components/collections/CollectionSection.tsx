@@ -5,11 +5,13 @@ import { routes } from "@/lib/routes";
 
 type CollectionSectionProps = {
   collection: Collection;
+  artworks?: Collection["artworks"];
   pageHeading?: boolean;
 };
 
 export default function CollectionSection({
   collection,
+  artworks = collection.artworks,
   pageHeading = false,
 }: CollectionSectionProps) {
   const Heading = pageHeading ? "h1" : "h2";
@@ -34,9 +36,9 @@ export default function CollectionSection({
         </p>
       </div>
 
-      {collection.artworks.length > 0 ? (
+      {artworks.length > 0 ? (
         <div className="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
-          {collection.artworks.map((artwork) => (
+          {artworks.map((artwork) => (
             <ArtworkCard key={artwork.slug} artwork={artwork} />
           ))}
         </div>

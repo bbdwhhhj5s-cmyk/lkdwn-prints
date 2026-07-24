@@ -41,25 +41,27 @@ export default function HeroComponent() {
 
   <h1 className="heading text-white text-5xl md:text-7xl lg:text-8xl leading-[0.95]">
 
-    Collected Landscapes.
+    Collected
 
     <br />
 
-    Timeless Prints.
+    Landscapes
 
 </h1>
 
 <p className="body-text mt-8 text-lg md:text-xl text-[#D9D7D2] max-w-xl mx-auto leading-relaxed">
 
-          Museum quality photography across Scotland and Europe.
+          Fine art landscape photography exploring atmosphere, light and
+          place. Curated as evolving exhibitions and printed using
+          museum-quality archival materials.
 
         </p>
 
         <div className="mt-12">
 
-          <Button href={routes.collections}>
+          <Button href={routes.collection("scotland")}>
 
-            Explore Collections
+            Enter Exhibition
 
           </Button>
 
