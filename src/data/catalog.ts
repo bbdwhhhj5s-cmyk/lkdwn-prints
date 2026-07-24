@@ -48,6 +48,7 @@ const mockupGalleries: Partial<Record<string, string>> = {
   "beneath-the-pyramid": "beneath-the-pyramid",
   "arc-against-the-storm": "arc-against-the-storm",
   metropolitain: "metropolitain",
+  "paris-rooftops": "paris-rooftops",
 };
 
 const galleryForArtwork = (slug: string, image: string) => {
@@ -327,7 +328,7 @@ const parisArtworks: Artwork[] = [
     slug: "paris-rooftops",
     title: "Paris Rooftops",
     location: "Paris",
-    image: "/images/paris/paris-11.jpg",
+    image: "/images/paris/paris-rooftops.jpg",
     description:
       "A layered view across zinc rooftops, balconies and tree-lined Parisian streets.",
     orientation: "portrait",
