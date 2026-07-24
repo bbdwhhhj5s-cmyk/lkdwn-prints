@@ -37,6 +37,7 @@ const mockupGalleries: Partial<Record<string, string>> = {
   "castle-stalker": "castle-stalker",
   "glasgow-green": "glasgow-green",
   "highland-reflections": "highland-reflections",
+  "highland-light": "highland-light",
 };
 
 const galleryForArtwork = (slug: string, image: string) => {
@@ -185,7 +186,7 @@ const scotlandArtworks: Artwork[] = [
     slug: "highland-light",
     title: "Highland Light",
     location: "Scottish Highlands",
-    image: "/images/scotland/scotland-10.jpg",
+    image: "/images/scotland/scotland-23.jpg",
     description:
       "Breaking light illuminated the Highland landscape beneath dramatic cloud.",
   }),
@@ -261,7 +262,7 @@ export const artworkAliases: Record<string, string> = {
   "scotland-9": "the-clyde",
   "scotland-10": "highland-light",
   "scotland-11": "mountain-silence",
-  "scotland-23": "winter-light",
+  "scotland-23": "highland-light",
   "scotland-25": "glasgow-green",
 };
 
