@@ -36,6 +36,7 @@ const mockupGalleries: Partial<Record<string, string>> = {
   "glenfinnan-monument": "glenfinnan-monument",
   "castle-stalker": "castle-stalker",
   "glasgow-green": "glasgow-green",
+  "highland-reflections": "highland-reflections",
 };
 
 const galleryForArtwork = (slug: string, image: string) => {
