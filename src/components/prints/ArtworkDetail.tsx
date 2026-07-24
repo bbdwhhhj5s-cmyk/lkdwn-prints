@@ -4,6 +4,7 @@ import type { Artwork } from "@/data/catalog";
 import { getAdjacentArtworks } from "@/data/catalog";
 import { routes } from "@/lib/routes";
 import ProductConfigurator from "@/components/store/ProductConfigurator";
+import CartLink from "@/components/cart/CartLink";
 
 type ArtworkDetailProps = {
   artwork: Artwork;
@@ -15,12 +16,12 @@ export default function ArtworkDetail({ artwork }: ArtworkDetailProps) {
   return (
     <main className="min-h-screen bg-[#07131C] px-8 pb-20 pt-32">
       <article className="mx-auto max-w-7xl">
-        <Link
-          href={routes.collection(artwork.collection)}
-          className="text-xs uppercase tracking-[0.3em] text-[#C9A567]"
-        >
-          Back to {artwork.collection}
-        </Link>
+        <div className="flex items-center justify-between gap-6 text-xs uppercase tracking-[0.3em] text-[#C9A567]">
+          <Link href={routes.collection(artwork.collection)}>
+            Back to {artwork.collection}
+          </Link>
+          <CartLink />
+        </div>
 
         <div className="mt-8 grid items-start gap-12 lg:grid-cols-[minmax(0,1.4fr)_minmax(18rem,0.6fr)]">
           <Image

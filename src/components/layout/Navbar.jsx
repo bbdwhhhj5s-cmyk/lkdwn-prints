@@ -21,15 +21,13 @@ export default function Navbar() {
 
           <Link href={routes.collections}>Collections</Link>
 
-          <a href="#">Journal</a>
-
-          <a href="#">About</a>
-
-          <a href="#">Contact</a>
-
           <CartLink />
 
         </nav>
+
+        <div className="md:hidden uppercase tracking-[0.2em] text-xs text-white">
+          <CartLink />
+        </div>
 
       </div>
     </header>
