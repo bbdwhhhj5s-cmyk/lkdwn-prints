@@ -116,7 +116,7 @@ export const artworks = collections.flatMap((collection) => collection.artworks)
 export const getArtwork = (slug: string) =>
   artworks.find((artwork) => artwork.slug === slug);
 
-export const getCollection = (slug: CollectionSlug) =>
+export const getCollection = (slug: string) =>
   collections.find((collection) => collection.slug === slug);
 
 export const getAdjacentArtworks = (artwork: Artwork) => {
