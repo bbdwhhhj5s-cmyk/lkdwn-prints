@@ -136,7 +136,7 @@ const scotlandArtworks: Artwork[] = [
     slug: "glenfinnan-monument",
     title: "Glenfinnan Monument",
     location: "Loch Shiel",
-    image: "/images/scotland/scotland-8.jpg",
+    image: "/images/scotland/glenfinnan-monument.jpg",
     description:
       "The Glenfinnan Monument overlooking Loch Shiel beneath dramatic Highland skies.",
   }),
@@ -152,7 +152,7 @@ const scotlandArtworks: Artwork[] = [
     slug: "glasgow-green",
     title: "Glasgow Green",
     location: "Glasgow",
-    image: "/images/scotland/scotland-5.jpg",
+    image: "/images/scotland/glasgow-green.jpg",
     description:
       "Autumn colour surrounding one of Glasgow's most historic public parks.",
   }),
