@@ -41,6 +41,17 @@ const mockupGalleries: Partial<Record<string, string>> = {
   "winter-light": "winter-light",
   "mountain-silence": "mountain-silence",
   "the-clyde": "the-clyde",
+  "eiffel-ironwork": "eiffel-ironwork",
+  "passage-into-light": "passage-into-light",
+  "across-the-seine": "across-the-seine",
+  "rue-de-buci": "rue-de-buci",
+  "beneath-the-pyramid": "beneath-the-pyramid",
+  "arc-against-the-storm": "arc-against-the-storm",
+  "life-along-the-seine": "life-along-the-seine",
+  metropolitain: "metropolitain",
+  "triumph-in-stone": "triumph-in-stone",
+  "eiffel-sky": "eiffel-sky",
+  "paris-rooftops": "paris-rooftops",
 };
 
 const galleryForArtwork = (slug: string, image: string) => {
@@ -101,6 +112,28 @@ const scotlandArtwork = ({
   alt: `${title}, a fine art photograph from ${location}`,
   description,
   orientation: "landscape",
+  gallery: galleryForArtwork(slug, image),
+});
+
+const parisArtwork = ({
+  slug,
+  title,
+  location,
+  image,
+  description,
+  orientation,
+}: Pick<
+  Artwork,
+  "slug" | "title" | "location" | "image" | "description" | "orientation"
+>): Artwork => ({
+  slug,
+  title,
+  collection: "paris",
+  location,
+  image,
+  alt: `${title}, a fine art photograph from ${location}`,
+  description,
+  orientation,
   gallery: galleryForArtwork(slug, image),
 });
 
@@ -203,6 +236,108 @@ const scotlandArtworks: Artwork[] = [
   }),
 ];
 
+const parisArtworks: Artwork[] = [
+  parisArtwork({
+    slug: "eiffel-ironwork",
+    title: "Eiffel Ironwork",
+    location: "Champ de Mars",
+    image: "/images/paris/paris-1.jpg",
+    description:
+      "The intricate iron structure of the Eiffel Tower seen from beneath its sweeping arches.",
+    orientation: "portrait",
+  }),
+  parisArtwork({
+    slug: "passage-into-light",
+    title: "Passage Into Light",
+    location: "Saint-Germain-des-Prés",
+    image: "/images/paris/paris-2.jpg",
+    description:
+      "A shaded Parisian passage opens onto café tables and the bright green canopy beyond.",
+    orientation: "portrait",
+  }),
+  parisArtwork({
+    slug: "across-the-seine",
+    title: "Across the Seine",
+    location: "River Seine",
+    image: "/images/paris/across-the-seine.jpg",
+    description:
+      "The Eiffel Tower rises beyond the Seine beneath a dramatic break in the evening clouds.",
+    orientation: "landscape",
+  }),
+  parisArtwork({
+    slug: "rue-de-buci",
+    title: "Rue de Buci",
+    location: "Saint-Germain-des-Prés",
+    image: "/images/paris/paris-4.jpg",
+    description:
+      "A spontaneous street-level view of daily life along the lively Rue de Buci.",
+    orientation: "landscape",
+  }),
+  parisArtwork({
+    slug: "beneath-the-pyramid",
+    title: "Beneath the Pyramid",
+    location: "Musée du Louvre",
+    image: "/images/paris/paris-5.jpg",
+    description:
+      "The Louvre's historic architecture is framed by the geometric lattice of its glass pyramid.",
+    orientation: "portrait",
+  }),
+  parisArtwork({
+    slug: "arc-against-the-storm",
+    title: "Arc Against the Storm",
+    location: "Place Charles de Gaulle",
+    image: "/images/paris/arc-against-the-storm.jpg",
+    description:
+      "The Arc de Triomphe stands in stark monochrome beneath a gathering storm.",
+    orientation: "portrait",
+  }),
+  parisArtwork({
+    slug: "life-along-the-seine",
+    title: "Life Along the Seine",
+    location: "Avenue des Champs-Élysées",
+    image: "/images/paris/life-along-the-seine.jpg",
+    description:
+      "Parisian fashion houses rise beneath a richly textured sky crossed by luminous trails.",
+    orientation: "landscape",
+  }),
+  parisArtwork({
+    slug: "metropolitain",
+    title: "Métropolitain",
+    location: "Paris Métro",
+    image: "/images/paris/metropolitain.jpg",
+    description:
+      "A classic Art Nouveau Métropolitain sign reaches into a turbulent Paris sky.",
+    orientation: "portrait",
+  }),
+  parisArtwork({
+    slug: "triumph-in-stone",
+    title: "Eiffel Afloat",
+    location: "River Seine",
+    image: "/images/paris/eiffel-afloat.jpg",
+    description:
+      "The Eiffel Tower appears through the glass and reflections of a riverboat crossing the Seine.",
+    orientation: "portrait",
+  }),
+  parisArtwork({
+    slug: "eiffel-sky",
+    title: "Eiffel Sky",
+    location: "Champ de Mars",
+    image: "/images/paris/paris-10.jpg",
+    description:
+      "The Eiffel Tower rises into a sky crossed by luminous trails of cloud.",
+    orientation: "portrait",
+  }),
+  parisArtwork({
+    slug: "paris-rooftops",
+    title: "Paris Rooftops",
+    location: "Paris",
+    image: "/images/paris/paris-rooftops.jpg",
+    description:
+      "A layered view across zinc rooftops, balconies and tree-lined Parisian streets.",
+    orientation: "portrait",
+  }),
+];
+
 export const collections: Collection[] = [
   {
     slug: "scotland",
@@ -224,7 +359,7 @@ export const collections: Collection[] = [
     seoTitle: "Paris Fine Art Photography",
     seoDescription:
       "Explore museum-quality architectural and street photography from Paris, France.",
-    artworks: numberedArtworks("paris", 11, "Paris, France", [1, 2, 5, 6, 8, 10, 11]),
+    artworks: parisArtworks,
   },
   {
     slug: "porto",
@@ -267,6 +402,17 @@ export const artworkAliases: Record<string, string> = {
   "scotland-11": "winter-light",
   "scotland-23": "highland-light",
   "scotland-25": "glasgow-green",
+  "paris-1": "eiffel-ironwork",
+  "paris-2": "passage-into-light",
+  "paris-3": "across-the-seine",
+  "paris-4": "rue-de-buci",
+  "paris-5": "beneath-the-pyramid",
+  "paris-6": "arc-against-the-storm",
+  "paris-7": "life-along-the-seine",
+  "paris-8": "metropolitain",
+  "paris-9": "triumph-in-stone",
+  "paris-10": "eiffel-sky",
+  "paris-11": "paris-rooftops",
 };
 
 export const getArtwork = (slug: string) =>
