@@ -1,6 +1,7 @@
 import Navbar from "./layout/Navbar";
 import Button from "./ui/Button";
 import ScrollIndicator from "./hero/ScrollIndicator";
+import { routes } from "../lib/routes";
 
 export default function HeroComponent() {
 
@@ -47,7 +48,7 @@ export default function HeroComponent() {
 
         <div className="mt-12">
 
-          <Button>
+          <Button href={routes.collections}>
 
             Explore Collections
 

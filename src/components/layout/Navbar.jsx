@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { routes } from "../../lib/routes";
+
 export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black/20 border-b border-white/10">
@@ -11,7 +14,7 @@ export default function Navbar() {
 
         <nav className="hidden md:flex gap-10 uppercase tracking-[0.25em] text-sm text-white">
 
-          <a href="#">Collections</a>
+          <Link href={routes.collections}>Collections</Link>
 
           <a href="#">Journal</a>
 
@@ -25,4 +28,3 @@ export default function Navbar() {
     </header>
   );
 }
-
