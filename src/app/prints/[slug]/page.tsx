@@ -1,13 +1,16 @@
 import { notFound } from "next/navigation";
 import ArtworkDetail from "@/components/prints/ArtworkDetail";
-import { artworks, getArtwork } from "@/data/catalog";
+import { artworkAliases, artworks, getArtwork } from "@/data/catalog";
 import { routes } from "@/lib/routes";
 import type { Metadata } from "next";
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return artworks.map(({ slug }) => ({ slug }));
+  return [
+    ...artworks.map(({ slug }) => ({ slug })),
+    ...Object.keys(artworkAliases).map((slug) => ({ slug })),
+  ];
 }
 
 export async function generateMetadata({
