@@ -250,7 +250,7 @@ const parisArtworks: Artwork[] = [
     slug: "across-the-seine",
     title: "Across the Seine",
     location: "River Seine",
-    image: "/images/paris/paris-3.jpg",
+    image: "/images/paris/across-the-seine.jpg",
     description:
       "The Eiffel Tower rises beyond the Seine beneath a dramatic break in the evening clouds.",
     orientation: "landscape",
