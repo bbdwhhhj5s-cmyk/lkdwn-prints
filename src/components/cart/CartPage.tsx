@@ -15,7 +15,7 @@ import {
 import { routes } from "@/lib/routes";
 
 export default function CartPage() {
-  const { items, updateQuantity, removeItem } = useCart();
+  const { items, isHydrated, updateQuantity, removeItem } = useCart();
   const [checkoutError, setCheckoutError] = useState("");
   const [checkingOut, setCheckingOut] = useState(false);
   const subtotal = calculateSubtotal(items);
@@ -54,7 +54,11 @@ export default function CartPage() {
         </Link>
         <h1 className="heading mt-8 text-6xl">Your cart</h1>
 
-        {items.length === 0 ? (
+        {!isHydrated ? (
+          <div className="mt-12 animate-pulse border-t border-white/10 py-12 text-[#9AA4AE]">
+            Loading your cart…
+          </div>
+        ) : items.length === 0 ? (
           <div className="mt-12 border-t border-white/10 py-12">
             <p className="text-[#9AA4AE]">Your cart is empty.</p>
             <Link

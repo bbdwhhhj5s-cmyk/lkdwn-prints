@@ -3,6 +3,8 @@
 import { useState } from "react";
 import type { Artwork } from "@/data/catalog";
 import { useCart } from "@/components/cart/CartProvider";
+import Link from "next/link";
+import { routes } from "@/lib/routes";
 import {
   formatPrice,
   frameOptions,
@@ -89,7 +91,16 @@ export default function ProductConfigurator({ artwork }: { artwork: Artwork }) {
         Add to cart · {formatPrice(getUnitPrice(size, frame))}
       </button>
       <p aria-live="polite" className="mt-3 min-h-6 text-sm text-[#9AA4AE]">
-        {added ? "Added to your cart." : "Free UK shipping over £150."}
+        {added ? (
+          <>
+            Added to your cart.{" "}
+            <Link href={routes.cart} className="text-[#C9A567] underline">
+              View cart
+            </Link>
+          </>
+        ) : (
+          "Free UK shipping over £150."
+        )}
       </p>
     </div>
   );

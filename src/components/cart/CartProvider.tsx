@@ -15,6 +15,7 @@ import type { CartItem } from "@/lib/store";
 type CartContextValue = {
   items: CartItem[];
   itemCount: number;
+  isHydrated: boolean;
   addItem: (item: CartItem) => void;
   updateQuantity: (id: string, quantity: number) => void;
   removeItem: (id: string) => void;
@@ -100,12 +101,13 @@ export default function CartProvider({ children }: { children: ReactNode }) {
     () => ({
       items,
       itemCount: items.reduce((total, item) => total + item.quantity, 0),
+      isHydrated: hydrated,
       addItem,
       updateQuantity,
       removeItem,
       clearCart,
     }),
-    [addItem, clearCart, items, removeItem, updateQuantity],
+    [addItem, clearCart, hydrated, items, removeItem, updateQuantity],
   );
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
