@@ -48,6 +48,7 @@ const mockupGalleries: Partial<Record<string, string>> = {
   "beneath-the-pyramid": "beneath-the-pyramid",
   "arc-against-the-storm": "arc-against-the-storm",
   metropolitain: "metropolitain",
+  "triumph-in-stone": "triumph-in-stone",
   "eiffel-sky": "eiffel-sky",
   "paris-rooftops": "paris-rooftops",
 };
@@ -309,12 +310,12 @@ const parisArtworks: Artwork[] = [
   }),
   parisArtwork({
     slug: "triumph-in-stone",
-    title: "Triumph in Stone",
-    location: "Place Charles de Gaulle",
-    image: "/images/paris/paris-9.jpg",
+    title: "Eiffel Afloat",
+    location: "River Seine",
+    image: "/images/paris/eiffel-afloat.jpg",
     description:
-      "Sculpture, shadow and monumental stone define a close study of the Arc de Triomphe.",
-    orientation: "landscape",
+      "The Eiffel Tower appears through the glass and reflections of a riverboat crossing the Seine.",
+    orientation: "portrait",
   }),
   parisArtwork({
     slug: "eiffel-sky",
