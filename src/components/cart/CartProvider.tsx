@@ -30,7 +30,7 @@ type CartAction =
   | { type: "clear" };
 
 const CartContext = createContext<CartContextValue | null>(null);
-const storageKey = "lkdwn-cart";
+export const CART_STORAGE_KEY = "lkdwn-cart";
 
 function reducer(items: CartItem[], action: CartAction): CartItem[] {
   switch (action.type) {
@@ -65,12 +65,12 @@ export default function CartProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     try {
-      const stored = window.localStorage.getItem(storageKey);
+      const stored = window.localStorage.getItem(CART_STORAGE_KEY);
       if (stored) {
         dispatch({ type: "hydrate", items: JSON.parse(stored) });
       }
     } catch {
-      window.localStorage.removeItem(storageKey);
+      window.localStorage.removeItem(CART_STORAGE_KEY);
     } finally {
       setHydrated(true);
     }
@@ -78,7 +78,7 @@ export default function CartProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     if (hydrated) {
-      window.localStorage.setItem(storageKey, JSON.stringify(items));
+      window.localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
     }
   }, [hydrated, items]);
 
