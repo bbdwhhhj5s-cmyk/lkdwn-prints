@@ -34,8 +34,7 @@ export default function ArtworkDetail({ artwork }: ArtworkDetailProps) {
               {artwork.title}
             </h1>
             <p className="mt-7 leading-relaxed text-[#9AA4AE]">
-              Museum-quality fine art photography, produced for the LKDWN Prints
-              collection.
+              {artwork.description}
             </p>
           </div>
         </div>

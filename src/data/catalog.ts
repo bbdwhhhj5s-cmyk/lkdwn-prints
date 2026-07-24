@@ -7,6 +7,7 @@ export type Artwork = {
   location: string;
   image: string;
   alt: string;
+  description: string;
 };
 
 export type Collection = {
@@ -14,6 +15,8 @@ export type Collection = {
   name: string;
   title: string;
   description: string;
+  seoTitle: string;
+  seoDescription: string;
   artworks: Artwork[];
 };
 
@@ -39,6 +42,7 @@ const numberedArtworks = (
       location,
       image: `/images/${collection}/${slug}.jpg`,
       alt: `Fine art photograph from ${location}, artwork ${number}`,
+      description: `A museum-quality fine art photograph from ${location}.`,
     };
   });
 
@@ -50,6 +54,8 @@ const scotlandArtworks: Artwork[] = [
     location: "Glencoe, Scotland",
     image: "/images/scotland/glencoe.jpg",
     alt: "Mountain landscape at Glencoe in the Scottish Highlands",
+    description:
+      "A museum-quality fine art landscape photograph of Glencoe in the Scottish Highlands.",
   },
   ...numberedArtworks("scotland", 30, "the Scottish Highlands"),
 ];
@@ -61,6 +67,9 @@ export const collections: Collection[] = [
     title: "Where Weather Becomes Light.",
     description:
       "Fine art landscape photography captured throughout the Scottish Highlands.",
+    seoTitle: "Scotland Fine Art Photography",
+    seoDescription:
+      "Explore museum-quality landscape photography from Glencoe and the Scottish Highlands.",
     artworks: scotlandArtworks,
   },
   {
@@ -69,6 +78,9 @@ export const collections: Collection[] = [
     title: "Studies in Light and Stone.",
     description:
       "Quiet observations of architecture, streets and changing light across Paris.",
+    seoTitle: "Paris Fine Art Photography",
+    seoDescription:
+      "Explore museum-quality architectural and street photography from Paris, France.",
     artworks: numberedArtworks("paris", 11, "Paris, France"),
   },
   {
@@ -77,6 +89,9 @@ export const collections: Collection[] = [
     title: "Colour Along the Douro.",
     description:
       "A photographic study of Porto's riverside, tiled facades and Atlantic light.",
+    seoTitle: "Porto Fine Art Photography",
+    seoDescription:
+      "Explore museum-quality photography of Porto's riverside, tiled facades and Atlantic light.",
     artworks: numberedArtworks("porto", 12, "Porto, Portugal"),
   },
   {
@@ -85,6 +100,9 @@ export const collections: Collection[] = [
     title: "A City in Quiet Detail.",
     description:
       "The Prague collection is being prepared for release.",
+    seoTitle: "Prague Fine Art Photography",
+    seoDescription:
+      "Discover the forthcoming LKDWN Prints fine art photography collection from Prague.",
     artworks: [],
   },
 ];
