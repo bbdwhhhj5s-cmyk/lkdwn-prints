@@ -9,6 +9,7 @@ export type Artwork = {
   alt: string;
   description: string;
   orientation: "landscape" | "portrait";
+  gallery: string[];
 };
 
 export type Collection = {
@@ -27,6 +28,30 @@ const titleFromSlug = (slug: string) =>
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 
+const mockupGalleries: Partial<Record<string, string>> = {
+  glencoe: "buachaille-etive-mor",
+  "scotland-1": "rannoch-moor",
+  "scotland-2": "castle-stalker-by-moonlight",
+  "scotland-3": "light-after-the-storm",
+  "scotland-25": "glasgow-green",
+};
+
+const galleryForArtwork = (slug: string, image: string) => {
+  const mockupDirectory = mockupGalleries[slug];
+
+  if (!mockupDirectory) {
+    return [image];
+  }
+
+  return [
+    image,
+    `/images/mockups/${mockupDirectory}/living-room.jpg`,
+    `/images/mockups/${mockupDirectory}/boutique-hotel.jpg`,
+    `/images/mockups/${mockupDirectory}/executive-office.jpg`,
+    `/images/mockups/${mockupDirectory}/collector-detail.jpg`,
+  ];
+};
+
 const numberedArtworks = (
   collection: CollectionSlug,
   count: number,
@@ -36,16 +61,18 @@ const numberedArtworks = (
   Array.from({ length: count }, (_, index) => {
     const number = index + 1;
     const slug = `${collection}-${number}`;
+    const image = `/images/${collection}/${slug}.jpg`;
 
     return {
       slug,
       title: titleFromSlug(slug),
       collection,
       location,
-      image: `/images/${collection}/${slug}.jpg`,
+      image,
       alt: `Fine art photograph from ${location}, artwork ${number}`,
       description: `A museum-quality fine art photograph from ${location}.`,
       orientation: portraitNumbers.includes(number) ? "portrait" : "landscape",
+      gallery: galleryForArtwork(slug, image),
     };
   });
 
@@ -60,6 +87,7 @@ const scotlandArtworks: Artwork[] = [
     description:
       "A museum-quality fine art landscape photograph of Glencoe in the Scottish Highlands.",
     orientation: "landscape",
+    gallery: galleryForArtwork("glencoe", "/images/scotland/glencoe.jpg"),
   },
   ...numberedArtworks("scotland", 30, "the Scottish Highlands", [4, 10, 28, 30]),
 ];
