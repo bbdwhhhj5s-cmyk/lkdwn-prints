@@ -8,6 +8,7 @@ export type Artwork = {
   image: string;
   alt: string;
   description: string;
+  orientation: "landscape" | "portrait";
 };
 
 export type Collection = {
@@ -30,6 +31,7 @@ const numberedArtworks = (
   collection: CollectionSlug,
   count: number,
   location: string,
+  portraitNumbers: number[] = [],
 ): Artwork[] =>
   Array.from({ length: count }, (_, index) => {
     const number = index + 1;
@@ -43,6 +45,7 @@ const numberedArtworks = (
       image: `/images/${collection}/${slug}.jpg`,
       alt: `Fine art photograph from ${location}, artwork ${number}`,
       description: `A museum-quality fine art photograph from ${location}.`,
+      orientation: portraitNumbers.includes(number) ? "portrait" : "landscape",
     };
   });
 
@@ -56,8 +59,9 @@ const scotlandArtworks: Artwork[] = [
     alt: "Mountain landscape at Glencoe in the Scottish Highlands",
     description:
       "A museum-quality fine art landscape photograph of Glencoe in the Scottish Highlands.",
+    orientation: "landscape",
   },
-  ...numberedArtworks("scotland", 30, "the Scottish Highlands"),
+  ...numberedArtworks("scotland", 30, "the Scottish Highlands", [4, 10, 28, 30]),
 ];
 
 export const collections: Collection[] = [
@@ -81,7 +85,7 @@ export const collections: Collection[] = [
     seoTitle: "Paris Fine Art Photography",
     seoDescription:
       "Explore museum-quality architectural and street photography from Paris, France.",
-    artworks: numberedArtworks("paris", 11, "Paris, France"),
+    artworks: numberedArtworks("paris", 11, "Paris, France", [1, 2, 5, 6, 8, 10, 11]),
   },
   {
     slug: "porto",
@@ -92,7 +96,7 @@ export const collections: Collection[] = [
     seoTitle: "Porto Fine Art Photography",
     seoDescription:
       "Explore museum-quality photography of Porto's riverside, tiled facades and Atlantic light.",
-    artworks: numberedArtworks("porto", 12, "Porto, Portugal"),
+    artworks: numberedArtworks("porto", 12, "Porto, Portugal", [1, 2, 4, 5, 11]),
   },
   {
     slug: "prague",

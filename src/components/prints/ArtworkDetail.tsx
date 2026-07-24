@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Artwork } from "@/data/catalog";
 import { getAdjacentArtworks } from "@/data/catalog";
 import { routes } from "@/lib/routes";
@@ -21,9 +22,13 @@ export default function ArtworkDetail({ artwork }: ArtworkDetailProps) {
         </Link>
 
         <div className="mt-8 grid items-start gap-12 lg:grid-cols-[minmax(0,1.4fr)_minmax(18rem,0.6fr)]">
-          <img
+          <Image
             src={artwork.image}
             alt={artwork.alt}
+            width={artwork.orientation === "portrait" ? 1200 : 1600}
+            height={artwork.orientation === "portrait" ? 1600 : 1200}
+            sizes="(max-width: 1023px) 100vw, 70vw"
+            preload
             className="h-auto w-full object-contain"
           />
           <div className="lg:sticky lg:top-32">
