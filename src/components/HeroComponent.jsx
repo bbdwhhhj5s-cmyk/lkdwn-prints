@@ -1,6 +1,8 @@
+import Image from "next/image";
 import Navbar from "./layout/Navbar";
 import Button from "./ui/Button";
 import ScrollIndicator from "./hero/ScrollIndicator";
+import { routes } from "../lib/routes";
 
 export default function HeroComponent() {
 
@@ -10,13 +12,17 @@ export default function HeroComponent() {
 
       className="relative h-screen flex items-center justify-center overflow-hidden"
 
-      style={{
-        backgroundImage:"url('/images/hero/Hero.jpg')",
-        backgroundSize:"cover",
-        backgroundPosition:"center"
-      }}
-
     >
+
+      <Image
+        src="/images/hero/Hero.jpg"
+        alt=""
+        fill
+        preload
+        quality={85}
+        sizes="100vw"
+        className="object-cover"
+      />
 
       <Navbar />
 
@@ -24,8 +30,12 @@ export default function HeroComponent() {
 
       <div className="relative z-10 text-center">
 
-        <img
+        <Image
           src="/logo/lkdwn logo white.png"
+          alt="LKDWN Prints"
+          width={320}
+          height={124}
+          sizes="320px"
           className="w-80 mx-auto mb-10"
         />
 
@@ -47,7 +57,7 @@ export default function HeroComponent() {
 
         <div className="mt-12">
 
-          <Button>
+          <Button href={routes.collections}>
 
             Explore Collections
 
