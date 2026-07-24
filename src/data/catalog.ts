@@ -47,6 +47,7 @@ const mockupGalleries: Partial<Record<string, string>> = {
   "rue-de-buci": "rue-de-buci",
   "beneath-the-pyramid": "beneath-the-pyramid",
   "arc-against-the-storm": "arc-against-the-storm",
+  "life-along-the-seine": "life-along-the-seine",
   metropolitain: "metropolitain",
   "triumph-in-stone": "triumph-in-stone",
   "eiffel-sky": "eiffel-sky",
@@ -293,10 +294,10 @@ const parisArtworks: Artwork[] = [
   parisArtwork({
     slug: "life-along-the-seine",
     title: "Life Along the Seine",
-    location: "River Seine",
-    image: "/images/paris/paris-7.jpg",
+    location: "Avenue des Champs-Élysées",
+    image: "/images/paris/life-along-the-seine.jpg",
     description:
-      "A vivid houseboat rests beneath the trees and iron bridges lining the Seine.",
+      "Parisian fashion houses rise beneath a richly textured sky crossed by luminous trails.",
     orientation: "landscape",
   }),
   parisArtwork({
