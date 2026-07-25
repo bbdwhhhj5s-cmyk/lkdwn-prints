@@ -59,6 +59,7 @@ const mockupGalleries: Partial<Record<string, string>> = {
   "ribeira-and-the-bridge": "ribeira-and-the-bridge",
   "blue-hour-on-the-douro": "blue-hour-on-the-douro",
   "weathered-porto": "weathered-porto",
+  "above-the-ribeira": "above-the-ribeira",
 };
 
 const galleryForArtwork = (slug: string, image: string) => {
@@ -450,7 +451,7 @@ const portoArtworks: Artwork[] = [
     image: "/images/porto/porto-12.jpg",
     description:
       "A hillside church stands above the stacked façades of Porto's historic riverside.",
-    orientation: "portrait",
+    orientation: "landscape",
   }),
 ];
 
