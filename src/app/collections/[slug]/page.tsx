@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import CollectionHero from "@/components/collections/CollectionHero";
 import CollectionSection from "@/components/collections/CollectionSection";
 import Navbar from "@/components/layout/Navbar";
 import {
@@ -58,8 +59,9 @@ export default async function CollectionPage({
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-[#07131C] px-8 pb-16 pt-28">
-        <div className="mx-auto max-w-7xl">
+      <main className="min-h-screen bg-[#07131C]">
+        <CollectionHero collection={collection} />
+        <div className="mx-auto max-w-7xl px-8 pb-16 pt-12">
           <Link
             href={routes.collections}
             className="text-xs uppercase tracking-[0.3em] text-[#C9A567]"
@@ -69,7 +71,7 @@ export default async function CollectionPage({
           <CollectionSection
             collection={collection}
             artworks={getCollectionSelection(collection)}
-            pageHeading
+            showIntroduction={false}
           />
         </div>
       </main>

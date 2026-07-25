@@ -17,6 +17,8 @@ export type Collection = {
   name: string;
   title: string;
   description: string;
+  heroImage: string;
+  heroAlt: string;
   seoTitle: string;
   seoDescription: string;
   artworks: Artwork[];
@@ -454,6 +456,8 @@ export const collections: Collection[] = [
     title: "Where Weather Becomes Light.",
     description:
       "Fine art landscape photography captured throughout the Scottish Highlands.",
+    heroImage: "/images/scotland/glencoe-editorial.jpg",
+    heroAlt: "A dramatic mountain landscape in the Scottish Highlands",
     seoTitle: "Scotland Fine Art Photography",
     seoDescription:
       "Explore museum-quality landscape photography from Glencoe and the Scottish Highlands.",
@@ -465,6 +469,8 @@ export const collections: Collection[] = [
     title: "Studies in Light and Stone.",
     description:
       "Quiet observations of architecture, streets and changing light across Paris.",
+    heroImage: "/images/paris/across-the-seine.jpg",
+    heroAlt: "Paris and the Eiffel Tower beneath a dramatic sky",
     seoTitle: "Paris Fine Art Photography",
     seoDescription:
       "Explore museum-quality architectural and street photography from Paris, France.",
@@ -476,6 +482,8 @@ export const collections: Collection[] = [
     title: "Colour Along the Douro.",
     description:
       "A photographic study of Porto's riverside, tiled facades and Atlantic light.",
+    heroImage: "/images/porto/porto-9.jpg",
+    heroAlt: "Porto's Ribeira and the Dom Luís I Bridge above the Douro",
     seoTitle: "Porto Fine Art Photography",
     seoDescription:
       "Explore museum-quality photography of Porto's riverside, tiled facades and Atlantic light.",
@@ -487,6 +495,8 @@ export const collections: Collection[] = [
     title: "A City in Quiet Detail.",
     description:
       "The Prague collection is being prepared for release.",
+    heroImage: "/images/hero/Hero.jpg",
+    heroAlt: "A cinematic European landscape",
     seoTitle: "Prague Fine Art Photography",
     seoDescription:
       "Discover the forthcoming LKDWN Prints fine art photography collection from Prague.",
