@@ -67,6 +67,7 @@ const mockupGalleries: Partial<Record<string, string>> = {
   "red-roofs-of-prague": "red-roofs-of-prague",
   "sky-lines": "sky-lines",
   "st-nicholas-rising": "st-nicholas-rising",
+  "stone-witness": "stone-witness",
 };
 
 const galleryForArtwork = (slug: string, image: string) => {
