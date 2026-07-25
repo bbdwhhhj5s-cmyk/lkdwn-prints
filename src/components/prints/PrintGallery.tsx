@@ -52,7 +52,10 @@ export default function PrintGallery({ artwork }: { artwork: Artwork }) {
   }, [artwork.gallery.length, showNext, showPrevious, viewerOpen]);
 
   return (
-    <section aria-label={`${artwork.title} gallery`}>
+    <section
+      aria-label={`${artwork.title} gallery`}
+      className="min-w-0 overflow-hidden"
+    >
       <button
         type="button"
         onClick={() => setViewerOpen(true)}
