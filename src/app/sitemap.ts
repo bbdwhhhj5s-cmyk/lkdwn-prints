@@ -16,6 +16,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.95,
     },
+    {
+      url: new URL(routes.printDelivery, siteUrl).toString(),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
     ...collections.map((collection) => ({
       url: new URL(routes.collection(collection.slug), siteUrl).toString(),
       changeFrequency: "monthly" as const,

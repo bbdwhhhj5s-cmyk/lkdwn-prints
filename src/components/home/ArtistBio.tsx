@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function ArtistBio() {
   return (
-    <section className="pb-40">
+    <section id="photographer" className="scroll-mt-28 pb-40">
       <div className="mx-auto max-w-7xl px-8">
         <div className="border-y border-white/10 py-20 md:py-28">
           <div className="grid items-center gap-12 md:grid-cols-[0.75fr_1.25fr] md:gap-20">
