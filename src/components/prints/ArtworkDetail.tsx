@@ -86,7 +86,7 @@ export default function ArtworkDetail({ artwork }: ArtworkDetailProps) {
                   ["Availability", "Printed to order"],
                 ].map(([label, value]) => (
                   <div key={label}>
-                    <dt className="text-xs uppercase tracking-[0.25em] text-white/35">
+                    <dt className="text-xs uppercase tracking-[0.25em] text-white/50">
                       {label}
                     </dt>
                     <dd className="mt-2 text-lg capitalize text-white/80">

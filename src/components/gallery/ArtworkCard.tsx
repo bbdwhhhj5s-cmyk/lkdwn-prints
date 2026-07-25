@@ -12,7 +12,6 @@ export default function ArtworkCard({ artwork }: ArtworkCardProps) {
     <Link
       href={routes.artwork(artwork.slug)}
       className="group block"
-      aria-label={`View ${artwork.title}`}
     >
       <div className="aspect-[4/5] overflow-hidden bg-[#102632]">
         <Image

@@ -74,7 +74,9 @@ export default function PrintGallery({ artwork }: { artwork: Artwork }) {
             alt={`${artwork.alt} — ${galleryLabels[activeIndex] ?? "gallery view"}`}
             fill
             preload
-            sizes="(max-width: 1023px) 100vw, 65vw"
+            fetchPriority="high"
+            quality={70}
+            sizes="(max-width: 1023px) calc(100vw - 4rem), 65vw"
             className="object-contain transition duration-700 group-hover:scale-[1.015]"
           />
           <div className="pointer-events-none absolute inset-0 rounded-[24px] ring-1 ring-inset ring-white/10" />
@@ -92,7 +94,7 @@ export default function PrintGallery({ artwork }: { artwork: Artwork }) {
                 View the artwork in curated interiors.
               </p>
             </div>
-            <p className="text-sm text-white/40">
+            <p className="text-sm text-white/50">
               {String(activeIndex + 1).padStart(2, "0")} /{" "}
               {String(artwork.gallery.length).padStart(2, "0")}
             </p>
@@ -126,7 +128,7 @@ export default function PrintGallery({ artwork }: { artwork: Artwork }) {
                   className={`mt-3 block text-[10px] uppercase tracking-[0.25em] ${
                     activeIndex === index
                       ? "text-[#D6B36A]"
-                      : "text-white/40"
+                      : "text-white/50"
                   }`}
                 >
                   {galleryLabels[index] ?? `Image ${index + 1}`}

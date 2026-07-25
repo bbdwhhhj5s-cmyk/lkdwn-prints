@@ -19,7 +19,7 @@ export default function HeroComponent() {
         alt=""
         fill
         preload
-        quality={85}
+        quality={70}
         sizes="100vw"
         className="object-cover"
       />
