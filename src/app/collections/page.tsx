@@ -18,20 +18,46 @@ export default function CollectionsPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-[#090D12] px-8 pb-28 pt-36 text-white">
-        <div className="mx-auto max-w-7xl">
-          <header className="max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.45em] text-[#D6B36A]">
-              LKDWN Prints
-            </p>
-            <h1 className="heading mt-7 text-6xl leading-tight md:text-8xl">
-              Collected Landscapes.
-            </h1>
-            <p className="mt-8 max-w-2xl text-lg leading-9 text-white/65">
-              Curated bodies of work exploring atmosphere, architecture,
-              landscape and light.
-            </p>
+      <main className="min-h-screen bg-[#090D12] text-white">
+        <section className="relative min-h-[92svh] overflow-hidden">
+          <Image
+            src="/images/scotland/scotland-16.jpg"
+            alt="A quiet view across Loch Shiel beneath a clear blue sky"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+
+          <div className="absolute inset-0 bg-gradient-to-t from-[#090D12] via-black/20 to-black/45" />
+
+          <header className="absolute inset-x-0 bottom-16 px-8 md:bottom-24">
+            <div className="mx-auto max-w-7xl">
+              <div className="max-w-3xl">
+                <p className="text-xs uppercase tracking-[0.45em] text-[#D6B36A]">
+                  LKDWN Prints
+                </p>
+                <h1 className="heading mt-7 text-6xl leading-tight md:text-8xl">
+                  Collected Landscapes.
+                </h1>
+                <p className="mt-8 max-w-2xl text-lg leading-9 text-white/75">
+                  Curated bodies of work exploring atmosphere, architecture,
+                  landscape and light.
+                </p>
+              </div>
+            </div>
           </header>
+        </section>
+
+        <div className="mx-auto max-w-7xl px-8 pb-28 pt-24">
+          <div className="max-w-3xl">
+            <p className="text-xs uppercase tracking-[0.45em] text-[#D6B36A]">
+              The collections
+            </p>
+            <p className="heading mt-7 text-4xl leading-tight text-white/90 md:text-5xl">
+              Four evolving exhibitions shaped by place, weather and light.
+            </p>
+          </div>
 
           <div className="mt-24 space-y-16">
             {collections.map((collection, index) => {
