@@ -5,8 +5,8 @@ export default function ArtistBio() {
     <section className="pb-40">
       <div className="mx-auto max-w-7xl px-8">
         <div className="border-y border-white/10 py-20 md:py-28">
-          <div className="grid items-center gap-12 md:grid-cols-[0.9fr_1.1fr] md:gap-20">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-[32px] border border-white/10 bg-[#0D1218]">
+          <div className="grid items-center gap-12 md:grid-cols-[0.75fr_1.25fr] md:gap-20">
+            <div className="relative aspect-[4/3] w-full max-w-md justify-self-center overflow-hidden rounded-[32px] border border-white/10 bg-[#0D1218]">
               <Image
                 src="/images/about/john-mchugh.png"
                 alt="John McHugh, the Glasgow photographer behind LKDWN Prints"
@@ -29,16 +29,18 @@ export default function ArtistBio() {
 
               <div className="mt-10 space-y-7 text-lg leading-9 text-white/70 md:text-xl md:leading-10">
                 <p>
-                  I&apos;m John McHugh, a Glasgow photographer retired from a
-                  long career in graphic design.
+                  I&apos;m John McHugh, a Glasgow photographer and retired
+                  graphic designer. A long career working with image,
+                  composition and colour still shapes the way I see the world.
                 </p>
                 <p>
-                  LKDWN Prints is my way of sharing my best photographs with
-                  the world—after all, what else would I do with them?
+                  LKDWN Prints brings together the photographs I most want to
+                  share—fleeting light, striking places and moments worth
+                  holding onto. After all, what else would I do with them?
                 </p>
                 <p>
-                  Every photograph in these collections was taken by me and
-                  edited with love.
+                  Every image in these collections was photographed and edited
+                  by me, with care, curiosity and love.
                 </p>
               </div>
             </div>
