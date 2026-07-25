@@ -5,6 +5,7 @@ const footerLinks = [
   { label: "Home", href: routes.home },
   { label: "Collections", href: routes.collections },
   { label: "The Photographer", href: `${routes.home}#photographer` },
+  { label: "Trade & Projects", href: routes.tradeProjects },
   { label: "Print & Delivery", href: routes.printDelivery },
   { label: "Cart", href: routes.cart },
 ];
@@ -45,7 +46,12 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col gap-3 border-t border-white/10 pt-7 text-[11px] uppercase tracking-[0.2em] text-white/35 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} John McHugh</p>
-          <p>Glasgow, Scotland</p>
+          <a
+            href="mailto:info@lkdwn.com"
+            className="transition hover:text-[#D6B36A]"
+          >
+            info@lkdwn.com
+          </a>
         </div>
       </div>
     </footer>
