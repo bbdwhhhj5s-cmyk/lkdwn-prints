@@ -143,6 +143,28 @@ const portoArtwork = ({
   gallery: galleryForArtwork(slug, image),
 });
 
+const pragueArtwork = ({
+  slug,
+  title,
+  location,
+  image,
+  description,
+  orientation,
+}: Pick<
+  Artwork,
+  "slug" | "title" | "location" | "image" | "description" | "orientation"
+>): Artwork => ({
+  slug,
+  title,
+  collection: "prague",
+  location,
+  image,
+  alt: `${title}, a fine art photograph from ${location}`,
+  description,
+  orientation,
+  gallery: galleryForArtwork(slug, image),
+});
+
 const scotlandArtworks: Artwork[] = [
   scotlandArtwork({
     slug: "buachaille-etive-mor",
@@ -455,6 +477,108 @@ const portoArtworks: Artwork[] = [
   }),
 ];
 
+const pragueArtworks: Artwork[] = [
+  pragueArtwork({
+    slug: "saint-above-the-city",
+    title: "Saint Above the City",
+    location: "Malá Strana",
+    image: "/images/prague/prague-1.jpg",
+    description:
+      "A weathered saint stands above Prague's red roofs as the Gothic spires of St Vitus Cathedral rise beyond.",
+    orientation: "portrait",
+  }),
+  pragueArtwork({
+    slug: "canal-through-mala-strana",
+    title: "Canal Through Malá Strana",
+    location: "Čertovka Canal",
+    image: "/images/prague/prague-2.jpg",
+    description:
+      "Warm afternoon light follows the quiet canal between the old houses and gardens of Malá Strana.",
+    orientation: "portrait",
+  }),
+  pragueArtwork({
+    slug: "balloon-over-mala-strana",
+    title: "Balloon Over Malá Strana",
+    location: "Malá Strana",
+    image: "/images/prague/prague-3.jpg",
+    description:
+      "A solitary balloon hangs above the rooftops in a graphic study of line, scale and open sky.",
+    orientation: "portrait",
+  }),
+  pragueArtwork({
+    slug: "prague-through-the-trees",
+    title: "Prague Through the Trees",
+    location: "Petřín",
+    image: "/images/prague/prague-4.jpg",
+    description:
+      "The Old Town and the Vltava appear through a dark frame of trees high above the city.",
+    orientation: "portrait",
+  }),
+  pragueArtwork({
+    slug: "red-roofs-of-prague",
+    title: "Red Roofs of Prague",
+    location: "Malá Strana",
+    image: "/images/prague/prague-5.jpg",
+    description:
+      "Terracotta roofs and ornamented façades gather into a dense pattern across the historic quarter.",
+    orientation: "portrait",
+  }),
+  pragueArtwork({
+    slug: "sky-lines",
+    title: "Sky Lines",
+    location: "Prague",
+    image: "/images/prague/prague-6.jpg",
+    description:
+      "White trails rise above a classical façade, drawing bold lines through the clear Prague sky.",
+    orientation: "portrait",
+  }),
+  pragueArtwork({
+    slug: "st-nicholas-rising",
+    title: "St Nicholas Rising",
+    location: "Malá Strana",
+    image: "/images/prague/prague-7.jpg",
+    description:
+      "The clock tower and green dome of St Nicholas Church rise between the close-set streets of Malá Strana.",
+    orientation: "portrait",
+  }),
+  pragueArtwork({
+    slug: "stone-witness",
+    title: "Stone Witness",
+    location: "Charles Bridge",
+    image: "/images/prague/prague-9.jpg",
+    description:
+      "A timeworn figure watches over the Vltava with Prague Castle held softly in the distance.",
+    orientation: "portrait",
+  }),
+  pragueArtwork({
+    slug: "cathedral-under-storm",
+    title: "Cathedral Under Storm",
+    location: "Prague Castle",
+    image: "/images/prague/prague-10.jpg",
+    description:
+      "St Vitus Cathedral and Prague Castle stand beneath a turbulent sky above the roofs of Malá Strana.",
+    orientation: "landscape",
+  }),
+  pragueArtwork({
+    slug: "the-painted-house",
+    title: "The Painted House",
+    location: "Prague",
+    image: "/images/prague/prague-11.jpg",
+    description:
+      "Painted figures, flowers and classical ornament turn a Prague façade into an intricate urban tapestry.",
+    orientation: "landscape",
+  }),
+  pragueArtwork({
+    slug: "looking-up-in-prague",
+    title: "Looking Up in Prague",
+    location: "Old Town",
+    image: "/images/prague/prague-12.jpg",
+    description:
+      "A modern street lamp and a historic façade converge in a sharply angled view toward a deep blue sky.",
+    orientation: "landscape",
+  }),
+];
+
 export const collections: Collection[] = [
   {
     slug: "scotland",
@@ -498,15 +622,15 @@ export const collections: Collection[] = [
   {
     slug: "prague",
     name: "Prague",
-    title: "A City in Quiet Detail.",
+    title: "Stone, Spire and Shadow.",
     description:
-      "The Prague collection is being prepared for release.",
-    heroImage: "/images/hero/Hero.jpg",
-    heroAlt: "A cinematic European landscape",
+      "A photographic study of Prague's Gothic silhouettes, red roofs and richly layered streets.",
+    heroImage: "/images/prague/prague-10.jpg",
+    heroAlt: "St Vitus Cathedral and Prague Castle beneath a dramatic sky",
     seoTitle: "Prague Fine Art Photography",
     seoDescription:
-      "Discover the forthcoming LKDWN Prints fine art photography collection from Prague.",
-    artworks: [],
+      "Explore museum-quality architectural and city photography from Prague, including Malá Strana, Charles Bridge and Prague Castle.",
+    artworks: pragueArtworks,
   },
 ];
 
@@ -550,6 +674,18 @@ export const artworkAliases: Record<string, string> = {
   "porto-10": "blue-hour-on-the-douro",
   "porto-11": "weathered-porto",
   "porto-12": "above-the-ribeira",
+  "prague-1": "saint-above-the-city",
+  "prague-2": "canal-through-mala-strana",
+  "prague-3": "balloon-over-mala-strana",
+  "prague-4": "prague-through-the-trees",
+  "prague-5": "red-roofs-of-prague",
+  "prague-6": "sky-lines",
+  "prague-7": "st-nicholas-rising",
+  "prague-8": "st-nicholas-rising",
+  "prague-9": "stone-witness",
+  "prague-10": "cathedral-under-storm",
+  "prague-11": "the-painted-house",
+  "prague-12": "looking-up-in-prague",
 };
 
 export const getArtwork = (slug: string) =>
