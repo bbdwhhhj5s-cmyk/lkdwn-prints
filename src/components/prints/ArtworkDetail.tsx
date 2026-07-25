@@ -31,7 +31,7 @@ export default function ArtworkDetail({ artwork }: ArtworkDetailProps) {
         </div>
 
         <div className="mt-10 grid items-start gap-16 lg:grid-cols-[minmax(0,1.25fr)_minmax(20rem,0.75fr)]">
-          <PrintGallery artwork={artwork} />
+          <PrintGallery key={artwork.slug} artwork={artwork} />
           <aside className="overflow-hidden rounded-[36px] border border-white/10 bg-[#0D1218] p-8 shadow-[0_20px_80px_rgba(0,0,0,0.45)] lg:sticky lg:top-12 md:p-10">
             <p className="text-xs uppercase tracking-[0.3em] text-[#C9A567]">
               Fine art print ·{" "}

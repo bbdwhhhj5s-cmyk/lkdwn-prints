@@ -451,7 +451,7 @@ const portoArtworks: Artwork[] = [
     image: "/images/porto/porto-12.jpg",
     description:
       "A hillside church stands above the stacked façades of Porto's historic riverside.",
-    orientation: "landscape",
+    orientation: "portrait",
   }),
 ];
 
