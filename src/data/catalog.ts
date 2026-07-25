@@ -22,12 +22,6 @@ export type Collection = {
   artworks: Artwork[];
 };
 
-const titleFromSlug = (slug: string) =>
-  slug
-    .split("-")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
-
 const mockupGalleries: Partial<Record<string, string>> = {
   "buachaille-etive-mor": "buachaille-etive-mor",
   "rannoch-moor": "rannoch-moor",
@@ -70,30 +64,6 @@ const galleryForArtwork = (slug: string, image: string) => {
   ];
 };
 
-const numberedArtworks = (
-  collection: CollectionSlug,
-  count: number,
-  location: string,
-  portraitNumbers: number[] = [],
-): Artwork[] =>
-  Array.from({ length: count }, (_, index) => {
-    const number = index + 1;
-    const slug = `${collection}-${number}`;
-    const image = `/images/${collection}/${slug}.jpg`;
-
-    return {
-      slug,
-      title: titleFromSlug(slug),
-      collection,
-      location,
-      image,
-      alt: `Fine art photograph from ${location}, artwork ${number}`,
-      description: `A museum-quality fine art photograph from ${location}.`,
-      orientation: portraitNumbers.includes(number) ? "portrait" : "landscape",
-      gallery: galleryForArtwork(slug, image),
-    };
-  });
-
 const scotlandArtwork = ({
   slug,
   title,
@@ -129,6 +99,28 @@ const parisArtwork = ({
   slug,
   title,
   collection: "paris",
+  location,
+  image,
+  alt: `${title}, a fine art photograph from ${location}`,
+  description,
+  orientation,
+  gallery: galleryForArtwork(slug, image),
+});
+
+const portoArtwork = ({
+  slug,
+  title,
+  location,
+  image,
+  description,
+  orientation,
+}: Pick<
+  Artwork,
+  "slug" | "title" | "location" | "image" | "description" | "orientation"
+>): Artwork => ({
+  slug,
+  title,
+  collection: "porto",
   location,
   image,
   alt: `${title}, a fine art photograph from ${location}`,
@@ -338,6 +330,117 @@ const parisArtworks: Artwork[] = [
   }),
 ];
 
+const portoArtworks: Artwork[] = [
+  portoArtwork({
+    slug: "crossing-lines",
+    title: "Crossing Lines",
+    location: "Porto",
+    image: "/images/porto/porto-1.jpg",
+    description:
+      "Pedestrians cast long shadows across the graphic lines of a Porto crossing.",
+    orientation: "portrait",
+  }),
+  portoArtwork({
+    slug: "cafe-sagres",
+    title: "Café Sagres",
+    location: "Porto",
+    image: "/images/porto/porto-2.jpg",
+    description:
+      "Timeworn stone, red tile and shuttered windows frame a traditional Porto café.",
+    orientation: "portrait",
+  }),
+  portoArtwork({
+    slug: "douro-from-above",
+    title: "Douro From Above",
+    location: "Douro",
+    image: "/images/porto/porto-3.jpg",
+    description:
+      "Terracotta roofs descend toward the Douro in a sweeping view across the city.",
+    orientation: "portrait",
+  }),
+  portoArtwork({
+    slug: "towers-over-the-valley",
+    title: "Towers Over the Valley",
+    location: "Porto",
+    image: "/images/porto/porto-4.jpg",
+    description:
+      "Twin church towers rise beyond a green hillside beneath sculpted Atlantic clouds.",
+    orientation: "portrait",
+  }),
+  portoArtwork({
+    slug: "iron-over-the-douro",
+    title: "Iron Over the Douro",
+    location: "Dom Luís I Bridge",
+    image: "/images/porto/porto-5.jpg",
+    description:
+      "The layered ironwork of Dom Luís I Bridge spans the Douro and the city beyond.",
+    orientation: "portrait",
+  }),
+  portoArtwork({
+    slug: "ribeira-geometry",
+    title: "Ribeira Geometry",
+    location: "Ribeira",
+    image: "/images/porto/porto-6.jpg",
+    description:
+      "White walls, tiled roofs and vivid façades form a tightly layered riverside pattern.",
+    orientation: "landscape",
+  }),
+  portoArtwork({
+    slug: "rabelo-on-the-douro",
+    title: "Rabelo on the Douro",
+    location: "Douro",
+    image: "/images/porto/porto-7.jpg",
+    description:
+      "A traditional rabelo boat moves quietly across the broad water of the Douro.",
+    orientation: "landscape",
+  }),
+  portoArtwork({
+    slug: "sanctuary-in-gold",
+    title: "Sanctuary in Gold",
+    location: "Porto",
+    image: "/images/porto/porto-8.jpg",
+    description:
+      "Warm light reveals gilded ornament, painted ceilings and the layered geometry of a Porto church.",
+    orientation: "portrait",
+  }),
+  portoArtwork({
+    slug: "ribeira-and-the-bridge",
+    title: "Ribeira and the Bridge",
+    location: "Douro",
+    image: "/images/porto/porto-9.jpg",
+    description:
+      "The colourful Ribeira waterfront follows the Douro toward the arch of Dom Luís I Bridge.",
+    orientation: "landscape",
+  }),
+  portoArtwork({
+    slug: "blue-hour-on-the-douro",
+    title: "Blue Hour on the Douro",
+    location: "Douro",
+    image: "/images/porto/porto-10.jpg",
+    description:
+      "Rabelo boats rest on blue water as the first city lights shimmer across the Douro.",
+    orientation: "landscape",
+  }),
+  portoArtwork({
+    slug: "weathered-porto",
+    title: "Weathered Porto",
+    location: "Porto",
+    image: "/images/porto/porto-11.jpg",
+    description:
+      "Iron balconies, patterned stone and ochre plaster carry the texture of generations.",
+    orientation: "portrait",
+  }),
+  portoArtwork({
+    slug: "above-the-ribeira",
+    title: "Above the Ribeira",
+    location: "Ribeira",
+    image: "/images/porto/porto-12.jpg",
+    description:
+      "A hillside church stands above the stacked façades of Porto's historic riverside.",
+    orientation: "portrait",
+  }),
+];
+
 export const collections: Collection[] = [
   {
     slug: "scotland",
@@ -370,7 +473,7 @@ export const collections: Collection[] = [
     seoTitle: "Porto Fine Art Photography",
     seoDescription:
       "Explore museum-quality photography of Porto's riverside, tiled facades and Atlantic light.",
-    artworks: numberedArtworks("porto", 12, "Porto, Portugal", [1, 2, 4, 5, 11]),
+    artworks: portoArtworks,
   },
   {
     slug: "prague",
@@ -413,6 +516,18 @@ export const artworkAliases: Record<string, string> = {
   "paris-9": "triumph-in-stone",
   "paris-10": "eiffel-sky",
   "paris-11": "paris-rooftops",
+  "porto-1": "crossing-lines",
+  "porto-2": "cafe-sagres",
+  "porto-3": "douro-from-above",
+  "porto-4": "towers-over-the-valley",
+  "porto-5": "iron-over-the-douro",
+  "porto-6": "ribeira-geometry",
+  "porto-7": "rabelo-on-the-douro",
+  "porto-8": "sanctuary-in-gold",
+  "porto-9": "ribeira-and-the-bridge",
+  "porto-10": "blue-hour-on-the-douro",
+  "porto-11": "weathered-porto",
+  "porto-12": "above-the-ribeira",
 };
 
 export const getArtwork = (slug: string) =>
