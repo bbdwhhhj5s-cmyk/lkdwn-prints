@@ -9,6 +9,25 @@ export const metadata: Metadata = {
   alternates: {
     canonical: routes.printDelivery,
   },
+  openGraph: {
+    title: "Print & Delivery | LKDWN Prints",
+    description:
+      "Fine art print materials, available sizes, framing and UK delivery information for LKDWN Prints.",
+    type: "website",
+    images: [
+      {
+        url: "/images/mockups/buachaille-etive-mor/collector-detail.jpg",
+        alt: "A framed LKDWN fine art photograph presented in an interior",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Print & Delivery | LKDWN Prints",
+    description:
+      "Fine art print materials, available sizes, framing and UK delivery information for LKDWN Prints.",
+    images: ["/images/mockups/buachaille-etive-mor/collector-detail.jpg"],
+  },
 };
 
 const details = [

@@ -12,6 +12,25 @@ export const metadata: Metadata = {
   alternates: {
     canonical: routes.collections,
   },
+  openGraph: {
+    title: "Fine Art Photography Collections | LKDWN Prints",
+    description:
+      "Explore curated fine art photography collections from Scotland, Paris, Porto and Prague.",
+    type: "website",
+    images: [
+      {
+        url: "/images/scotland/scotland-16.jpg",
+        alt: "A quiet view across Loch Shiel beneath a clear blue sky",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Fine Art Photography Collections | LKDWN Prints",
+    description:
+      "Explore curated fine art photography collections from Scotland, Paris, Porto and Prague.",
+    images: ["/images/scotland/scotland-16.jpg"],
+  },
 };
 
 export default function CollectionsPage() {

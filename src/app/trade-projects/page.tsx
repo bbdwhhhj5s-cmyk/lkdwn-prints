@@ -13,6 +13,27 @@ export const metadata: Metadata = {
   alternates: {
     canonical: routes.tradeProjects,
   },
+  openGraph: {
+    title: "Trade & Projects | LKDWN Prints",
+    description:
+      "Fine art photography for interior designers, architects, property developers, hotels and workplace installations.",
+    type: "website",
+    images: [
+      {
+        url: "/images/mockups/cathedral-under-storm-realistic-light/executive-office.jpg",
+        alt: "Fine art photography presented in a contemporary executive interior",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Trade & Projects | LKDWN Prints",
+    description:
+      "Fine art photography for interior designers, architects, property developers, hotels and workplace installations.",
+    images: [
+      "/images/mockups/cathedral-under-storm-realistic-light/executive-office.jpg",
+    ],
+  },
 };
 
 const audiences = [

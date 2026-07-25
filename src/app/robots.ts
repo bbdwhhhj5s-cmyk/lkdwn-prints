@@ -4,10 +4,14 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://lkdwnprints.com";
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-    },
+    rules: [
+      {
+        userAgent: "*",
+        allow: "/",
+        disallow: ["/api/", "/cart", "/order-confirmation"],
+      },
+    ],
+    host: siteUrl,
     sitemap: new URL("/sitemap.xml", siteUrl).toString(),
   };
 }
