@@ -70,7 +70,7 @@ const mockupGalleries: Partial<Record<string, string>> = {
   "stone-witness": "stone-witness-realistic-light",
   "cathedral-under-storm": "cathedral-under-storm-realistic-light",
   "the-painted-house": "the-painted-house-grounded",
-  "looking-up-in-prague": "looking-up-in-prague-grounded",
+  "looking-up-in-prague": "looking-up-in-prague-wall-fit",
 };
 
 const galleryForArtwork = (slug: string, image: string) => {
