@@ -54,6 +54,7 @@ const mockupGalleries: Partial<Record<string, string>> = {
   "towers-over-the-valley": "towers-over-the-valley",
   "iron-over-the-douro": "iron-over-the-douro",
   "ribeira-geometry": "ribeira-geometry",
+  "rabelo-on-the-douro": "rabelo-on-the-douro",
 };
 
 const galleryForArtwork = (slug: string, image: string) => {
