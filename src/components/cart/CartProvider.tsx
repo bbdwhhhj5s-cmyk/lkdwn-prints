@@ -10,7 +10,12 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import type { CartItem } from "@/lib/store";
+import {
+  getFrame,
+  getPrintSize,
+  isFrameAvailableForSize,
+  type CartItem,
+} from "@/lib/store";
 
 type CartContextValue = {
   items: CartItem[];
@@ -31,6 +36,30 @@ type CartAction =
 
 const CartContext = createContext<CartContextValue | null>(null);
 export const CART_STORAGE_KEY = "lkdwn-cart";
+
+function isCurrentCartItem(value: unknown): value is CartItem {
+  if (!value || typeof value !== "object") {
+    return false;
+  }
+
+  const item = value as Partial<CartItem>;
+  const size = item.size && getPrintSize(item.size);
+  const frame = item.frame && getFrame(item.frame);
+
+  return Boolean(
+    typeof item.id === "string" &&
+      typeof item.artworkSlug === "string" &&
+      typeof item.title === "string" &&
+      typeof item.image === "string" &&
+      size &&
+      frame &&
+      isFrameAvailableForSize(size.id, frame.id) &&
+      Number.isInteger(item.quantity) &&
+      item.quantity &&
+      item.quantity >= 1 &&
+      item.quantity <= 10,
+  );
+}
 
 function reducer(items: CartItem[], action: CartAction): CartItem[] {
   switch (action.type) {
@@ -67,7 +96,11 @@ export default function CartProvider({ children }: { children: ReactNode }) {
     try {
       const stored = window.localStorage.getItem(CART_STORAGE_KEY);
       if (stored) {
-        dispatch({ type: "hydrate", items: JSON.parse(stored) });
+        const parsed: unknown = JSON.parse(stored);
+        dispatch({
+          type: "hydrate",
+          items: Array.isArray(parsed) ? parsed.filter(isCurrentCartItem) : [],
+        });
       }
     } catch {
       window.localStorage.removeItem(CART_STORAGE_KEY);

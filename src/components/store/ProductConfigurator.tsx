@@ -10,13 +10,14 @@ import {
   frameOptions,
   getCartItemId,
   getUnitPrice,
+  isFrameAvailableForSize,
   printSizes,
   type FrameId,
   type PrintSizeId,
 } from "@/lib/store";
 
 export default function ProductConfigurator({ artwork }: { artwork: Artwork }) {
-  const [size, setSize] = useState<PrintSizeId>("a3");
+  const [size, setSize] = useState<PrintSizeId>("a2");
   const [frame, setFrame] = useState<FrameId>("unframed");
   const [added, setAdded] = useState(false);
   const { addItem } = useCart();
@@ -55,7 +56,12 @@ export default function ProductConfigurator({ artwork }: { artwork: Artwork }) {
                 name="size"
                 value={option.id}
                 checked={size === option.id}
-                onChange={() => setSize(option.id)}
+                onChange={() => {
+                  setSize(option.id);
+                  if (!isFrameAvailableForSize(option.id, frame)) {
+                    setFrame("unframed");
+                  }
+                }}
                 className="sr-only"
               />
               <span className="block">{option.label}</span>
@@ -75,13 +81,23 @@ export default function ProductConfigurator({ artwork }: { artwork: Artwork }) {
           className="mt-3 w-full border border-white/20 bg-[#07131C] p-4 text-base normal-case tracking-normal text-white"
         >
           {frameOptions.map((option) => (
-            <option key={option.id} value={option.id}>
+            <option
+              key={option.id}
+              value={option.id}
+              disabled={!isFrameAvailableForSize(size, option.id)}
+            >
               {option.label}
+              {!isFrameAvailableForSize(size, option.id) ? " (not available in A0)" : ""}
               {option.price ? ` (+${formatPrice(option.price)})` : ""}
             </option>
           ))}
         </select>
       </label>
+      {size === "a0" ? (
+        <p className="mt-2 text-xs text-[#9AA4AE]">
+          A0 is available unframed only.
+        </p>
+      ) : null}
 
       <button
         type="button"

@@ -1,15 +1,15 @@
 import type { Artwork } from "@/data/catalog";
 
 export const printSizes = [
-  { id: "a4", label: "A4", dimensions: "21 × 29.7 cm", price: 4500 },
-  { id: "a3", label: "A3", dimensions: "29.7 × 42 cm", price: 6500 },
   { id: "a2", label: "A2", dimensions: "42 × 59.4 cm", price: 9500 },
+  { id: "a1", label: "A1", dimensions: "59.4 × 84.1 cm", price: 14500 },
+  { id: "a0", label: "A0", dimensions: "84.1 × 118.9 cm", price: 22500 },
 ] as const;
 
 export const frameOptions = [
   { id: "unframed", label: "Unframed", price: 0 },
   { id: "black", label: "Black frame", price: 7000 },
-  { id: "oak", label: "Natural oak frame", price: 7500 },
+  { id: "wood", label: "Natural wood frame", price: 7500 },
 ] as const;
 
 export type PrintSizeId = (typeof printSizes)[number]["id"];
@@ -30,6 +30,11 @@ export const getPrintSize = (id: PrintSizeId) =>
 
 export const getFrame = (id: FrameId) =>
   frameOptions.find((frame) => frame.id === id);
+
+export const isFrameAvailableForSize = (
+  size: PrintSizeId,
+  frame: FrameId,
+) => size !== "a0" || frame === "unframed";
 
 export const getUnitPrice = (size: PrintSizeId, frame: FrameId) =>
   (getPrintSize(size)?.price ?? 0) + (getFrame(frame)?.price ?? 0);

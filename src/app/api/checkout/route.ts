@@ -8,6 +8,7 @@ import {
   getFrame,
   getPrintSize,
   getUnitPrice,
+  isFrameAvailableForSize,
   printSizes,
   type CartItem,
   type FrameId,
@@ -30,6 +31,7 @@ function validateItems(value: unknown): CartItem[] {
       !getArtwork(item.artworkSlug) ||
       !validSizes.has(item.size) ||
       !validFrames.has(item.frame) ||
+      !isFrameAvailableForSize(item.size, item.frame) ||
       !Number.isInteger(item.quantity) ||
       item.quantity < 1 ||
       item.quantity > 10
