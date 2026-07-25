@@ -67,8 +67,8 @@ const mockupGalleries: Partial<Record<string, string>> = {
   "red-roofs-of-prague": "red-roofs-of-prague",
   "sky-lines": "sky-lines",
   "st-nicholas-rising": "st-nicholas-rising",
-  "stone-witness": "stone-witness-lit-mounts",
-  "cathedral-under-storm": "cathedral-under-storm-balanced-scale",
+  "stone-witness": "stone-witness-realistic-light",
+  "cathedral-under-storm": "cathedral-under-storm-realistic-light",
   "the-painted-house": "the-painted-house",
 };
 
