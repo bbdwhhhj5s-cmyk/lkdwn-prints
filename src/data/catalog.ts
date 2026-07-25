@@ -60,6 +60,7 @@ const mockupGalleries: Partial<Record<string, string>> = {
   "blue-hour-on-the-douro": "blue-hour-on-the-douro",
   "weathered-porto": "weathered-porto",
   "above-the-ribeira": "above-the-ribeira",
+  "saint-above-the-city": "saint-above-the-city",
 };
 
 const galleryForArtwork = (slug: string, image: string) => {
