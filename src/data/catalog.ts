@@ -61,6 +61,7 @@ const mockupGalleries: Partial<Record<string, string>> = {
   "weathered-porto": "weathered-porto",
   "above-the-ribeira": "above-the-ribeira",
   "saint-above-the-city": "saint-above-the-city",
+  "canal-through-mala-strana": "canal-through-mala-strana",
 };
 
 const galleryForArtwork = (slug: string, image: string) => {
