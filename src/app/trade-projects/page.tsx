@@ -4,7 +4,7 @@ import Navbar from "@/components/layout/Navbar";
 import { routes } from "@/lib/routes";
 
 const enquiryHref =
-  "mailto:info@lkdwn.com?subject=Trade%20and%20project%20enquiry";
+  "mailto:john@lkdwnprints.co.uk?subject=Trade%20and%20project%20enquiry";
 
 export const metadata: Metadata = {
   title: "Trade & Projects",
@@ -191,7 +191,7 @@ export default function TradeProjectsPage() {
                 href={enquiryHref}
                 className="mt-12 inline-flex border border-[#D6B36A] px-8 py-5 text-xs uppercase tracking-[0.28em] text-[#D6B36A] transition hover:bg-[#D6B36A] hover:text-black"
               >
-                Email info@lkdwn.com
+                Email john@lkdwnprints.co.uk
               </a>
             </div>
           </div>

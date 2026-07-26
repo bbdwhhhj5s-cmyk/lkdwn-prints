@@ -47,10 +47,10 @@ export default function Footer() {
         <div className="mt-14 flex flex-col gap-3 border-t border-white/10 pt-7 text-[11px] uppercase tracking-[0.2em] text-white/50 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} John McHugh</p>
           <a
-            href="mailto:info@lkdwn.com"
+            href="mailto:john@lkdwnprints.co.uk"
             className="transition hover:text-[#D6B36A]"
           >
-            info@lkdwn.com
+            john@lkdwnprints.co.uk
           </a>
         </div>
       </div>

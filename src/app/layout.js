@@ -107,7 +107,7 @@ export default function RootLayout({ children }) {
               "@id": `${siteUrl}/#organization`,
               name: "LKDWN Prints",
               url: siteUrl,
-              email: "info@lkdwn.com",
+              email: "john@lkdwnprints.co.uk",
               founder: {
                 "@id": `${siteUrl}/#john-mchugh`,
               },
