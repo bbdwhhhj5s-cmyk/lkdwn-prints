@@ -14,6 +14,7 @@ import {
   type FrameId,
   type PrintSizeId,
 } from "@/lib/store";
+import { createCartMetadata } from "@/lib/checkout-metadata";
 
 const validSizes = new Set<PrintSizeId>(printSizes.map(({ id }) => id));
 const validFrames = new Set<FrameId>(frameOptions.map(({ id }) => id));
@@ -115,12 +116,7 @@ export async function POST(request: Request) {
         },
       ],
       metadata: {
-        cart: items
-          .map(({ artworkSlug, size, frame, quantity }) =>
-            [artworkSlug, size, frame, quantity].join(":"),
-          )
-          .join("|")
-          .slice(0, 500),
+        ...createCartMetadata(items),
       },
       success_url: `${origin}/order-confirmation?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/cart`,
