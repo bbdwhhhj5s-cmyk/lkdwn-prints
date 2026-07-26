@@ -7,6 +7,7 @@ import { routes } from "@/lib/routes";
 
 export const metadata: Metadata = {
   title: "Order Confirmation",
+  alternates: { canonical: "/order-confirmation" },
   robots: { index: false, follow: false },
 };
 

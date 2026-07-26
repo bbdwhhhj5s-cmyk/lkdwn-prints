@@ -3,6 +3,7 @@ import CartPage from "@/components/cart/CartPage";
 
 export const metadata: Metadata = {
   title: "Your Cart",
+  alternates: { canonical: "/cart" },
   robots: { index: false, follow: false },
 };
 
