@@ -19,6 +19,14 @@ import { createCartMetadata } from "@/lib/checkout-metadata";
 const validSizes = new Set<PrintSizeId>(printSizes.map(({ id }) => id));
 const validFrames = new Set<FrameId>(frameOptions.map(({ id }) => id));
 
+const createIntegrationIdentifier = () => {
+  const suffix = Array.from({ length: 8 }, () =>
+    String.fromCharCode(97 + Math.floor(Math.random() * 26)),
+  ).join("");
+
+  return `lkdwnprints_${suffix}`;
+};
+
 function validateItems(value: unknown): CartItem[] {
   if (!Array.isArray(value) || value.length === 0 || value.length > 20) {
     throw new Error("Your cart must contain between 1 and 20 items.");
@@ -70,6 +78,7 @@ export async function POST(request: Request) {
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
     const session = await stripe.checkout.sessions.create({
+      integration_identifier: createIntegrationIdentifier(),
       mode: "payment",
       submit_type: "pay",
       customer_creation: "always",

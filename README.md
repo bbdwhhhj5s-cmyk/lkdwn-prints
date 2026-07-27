@@ -18,6 +18,12 @@ The catalogue and cart work without Stripe credentials. Creating a Checkout
 Session requires `STRIPE_SECRET_KEY`. Stripe-hosted Checkout collects the UK
 shipping address and returns completed payments to `/order-confirmation`.
 
+The verified Stripe webhook can also send a branded customer confirmation
+through Resend. Configure `RESEND_API_KEY` and `ORDER_CONFIRMATION_FROM` on the
+server; the sender domain must be verified by Resend. Email requests use the
+Stripe Checkout Session ID as an idempotency key so webhook retries do not send
+duplicate confirmations.
+
 ## Verification
 
 ```bash
