@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
 import { fulfilStripeSession } from "@/lib/fulfilment";
+import { sendOrderConfirmationEmail } from "@/lib/order-confirmation-email";
 
 export const runtime = "nodejs";
 
@@ -47,27 +48,33 @@ export async function POST(request: Request) {
     return NextResponse.json({ received: true });
   }
 
-  if (process.env.GELATO_ENABLED !== "true") {
-    return NextResponse.json({ received: true, fulfilment: "disabled" });
-  }
-
   try {
     const session = event.data.object as Stripe.Checkout.Session;
-    const order = await fulfilStripeSession(stripe, session.id);
+    const order =
+      process.env.GELATO_ENABLED === "true"
+        ? await fulfilStripeSession(stripe, session.id)
+        : null;
+    const email = await sendOrderConfirmationEmail(stripe, session.id);
 
     return NextResponse.json({
       received: true,
-      fulfilment: order ? "submitted" : "payment_pending",
+      fulfilment:
+        process.env.GELATO_ENABLED === "true"
+          ? order
+            ? "submitted"
+            : "payment_pending"
+          : "disabled",
       gelatoOrderId: order?.id ?? null,
+      email,
     });
   } catch (error) {
     console.error(
-      "Gelato fulfilment failed:",
-      error instanceof Error ? error.message : "Unknown error",
+      "Post-payment processing failed:",
+      error instanceof Error ? error.message : "Unknown processing error",
     );
 
     return NextResponse.json(
-      { error: "Gelato fulfilment failed. Stripe will retry this event." },
+      { error: "Post-payment processing failed. Stripe will retry this event." },
       { status: 500 },
     );
   }

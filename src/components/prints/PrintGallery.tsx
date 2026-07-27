@@ -14,8 +14,12 @@ const galleryLabels = [
 
 export default function PrintGallery({ artwork }: { artwork: Artwork }) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [imageAspectRatios, setImageAspectRatios] = useState<
+    Record<string, number>
+  >({});
   const [viewerOpen, setViewerOpen] = useState(false);
   const activeImage = artwork.gallery[activeIndex] ?? artwork.image;
+  const activeAspectRatio = imageAspectRatios[activeImage];
 
   const showPrevious = useCallback(() => {
     setActiveIndex((current) =>
@@ -63,11 +67,12 @@ export default function PrintGallery({ artwork }: { artwork: Artwork }) {
         aria-label={`Open fullscreen view of ${artwork.title}`}
       >
         <div
-          className={`relative overflow-hidden rounded-[24px] bg-[#050608] ${
-            artwork.orientation === "portrait"
-              ? "aspect-[4/5]"
-              : "aspect-[16/10]"
-          }`}
+          className="relative overflow-hidden rounded-[24px] bg-[#050608] transition-[aspect-ratio] duration-300"
+          style={{
+            aspectRatio:
+              activeAspectRatio ??
+              (artwork.orientation === "portrait" ? "4 / 5" : "16 / 10"),
+          }}
         >
           <Image
             src={activeImage}
@@ -78,6 +83,19 @@ export default function PrintGallery({ artwork }: { artwork: Artwork }) {
             quality={70}
             sizes="(max-width: 1023px) calc(100vw - 4rem), 65vw"
             className="object-contain transition duration-700 group-hover:scale-[1.015]"
+            onLoad={(event) => {
+              const { naturalHeight, naturalWidth } = event.currentTarget;
+
+              if (naturalHeight > 0 && naturalWidth > 0) {
+                const aspectRatio = naturalWidth / naturalHeight;
+
+                setImageAspectRatios((current) =>
+                  current[activeImage] === aspectRatio
+                    ? current
+                    : { ...current, [activeImage]: aspectRatio },
+                );
+              }
+            }}
           />
           <div className="pointer-events-none absolute inset-0 rounded-[24px] ring-1 ring-inset ring-white/10" />
         </div>
