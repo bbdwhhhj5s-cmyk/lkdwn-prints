@@ -3,6 +3,7 @@ import "./globals.css";
 import CartProvider from "@/components/cart/CartProvider";
 import Footer from "@/components/layout/Footer";
 import JsonLd from "@/components/seo/JsonLd";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://lkdwnprints.com";
@@ -118,6 +119,7 @@ export default function RootLayout({ children }) {
           {children}
           <Footer />
         </CartProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
