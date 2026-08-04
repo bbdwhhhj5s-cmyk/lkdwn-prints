@@ -1,8 +1,9 @@
 import type { MetadataRoute } from "next";
 import { artworks, collections } from "@/data/catalog";
+import { journalArticles } from "@/data/journal";
 import { routes } from "@/lib/routes";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://lkdwnprints.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.lkdwnprints.co.uk";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -26,6 +27,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.75,
     },
+    {
+      url: new URL(routes.journal, siteUrl).toString(),
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+    ...journalArticles.map((article) => ({
+      url: new URL(routes.journalArticle(article.slug), siteUrl).toString(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+      images: [new URL(article.image, siteUrl).toString()],
+    })),
     ...collections.map((collection) => ({
       url: new URL(routes.collection(collection.slug), siteUrl).toString(),
       changeFrequency: "monthly" as const,

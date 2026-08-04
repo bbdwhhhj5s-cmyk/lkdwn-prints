@@ -7,7 +7,7 @@ import { printSizes } from "@/lib/store";
 import type { Metadata } from "next";
 
 export const dynamicParams = false;
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://lkdwnprints.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.lkdwnprints.co.uk";
 
 export function generateStaticParams() {
   return [
