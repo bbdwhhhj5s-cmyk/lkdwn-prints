@@ -18,9 +18,9 @@ export const journalArticles: JournalArticle[] = [
     slug: "why-i-keep-returning-to-glencoe",
     title: "Why I Keep Returning to Glencoe",
     excerpt:
-      "A landscape shaped by weather, memory and the brief moments when light changes everything.",
+      "The photograph is only the beginning. Through light, colour and interpretation, the finished image becomes an invitation to experience a joyful moment of your own.",
     description:
-      "John McHugh reflects on photographing Glencoe, returning to the Scottish Highlands and waiting for fleeting changes in light and atmosphere.",
+      "John McHugh reflects on photographing Glencoe and how the creative process continues after the camera, shaping light, colour and atmosphere into a finished fine art print.",
     publishedAt: "2026-08-04",
     location: "Glencoe, Scotland",
     image: "/images/scotland/glencoe-editorial.jpg",
@@ -30,11 +30,12 @@ export const journalArticles: JournalArticle[] = [
     collectionSlug: "scotland",
     collectionLabel: "Scotland Collection",
     paragraphs: [
-      "Glencoe is never quite the place I remember. The mountains remain, but the landscape changes with every passing cloud, shift in weather and movement of light.",
-      "That uncertainty is part of what keeps drawing me back. Familiar viewpoints can become entirely new places within minutes. A hillside disappears into rain, a break in the cloud catches the edge of a ridge, or still water briefly holds a reflection before the wind returns.",
-      "I rarely arrive with one photograph in mind. The process is quieter than that. It begins with walking, looking and waiting long enough for the landscape to reveal something that was not obvious at first.",
-      "Some visits produce a photograph. Others do not. Both matter. Returning to the same place builds an understanding that cannot be hurried, and each visit becomes part of a longer visual record shaped by weather, season and memory.",
-      "The photographs in the Scotland collection are not intended as a complete description of Glencoe or the Highlands. They are individual moments—brief alignments of place, atmosphere and light that existed only long enough to be photographed.",
+      "The photograph is only the beginning. Pressing the shutter records a place and a moment, but it does not fully record what it felt like to stand there.",
+      "Glencoe changes constantly. Light moves across the mountains, weather closes in and familiar views become unfamiliar within minutes. Those shifts are part of the experience, but they are also part of what I carry back into the editing process.",
+      "For me, editing is not simply correction. It is another stage of making the photograph. I return to the light, colour and atmosphere of the moment and shape the image until it reflects both what I saw and what I felt.",
+      "That process may involve lifting a quiet detail from shadow, drawing attention towards a brief break in the cloud, or balancing colour so the finished image holds the mood that first made me stop and look.",
+      "The final print is therefore not a literal record of Glencoe. It is my interpretation of a moment: the landscape as it appeared, the emotion it awakened in me and the choices made afterwards to bring those things together.",
+      "My hope is not that every viewer feels exactly what I felt. The finished photograph is an invitation to pause, to remember and perhaps to discover a joyful moment of their own.",
     ],
   },
 ];
