@@ -2,15 +2,16 @@
   "name": "lkdwn-prints",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
-    "mockups:setup": "./tools/mockup-studio/bootstrap.sh",
-"mockups": "./tools/mockup-studio/mockups.sh",
-"mockups:scotland": "./tools/mockup-studio/mockups.sh --collection scotland --backup"
-  },
+ "scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start",
+  "lint": "eslint",
+
+  "mockups:setup": "./tools/mockup-studio/bootstrap.sh",
+  "mockups": "./tools/mockup-studio/mockups.sh",
+  "mockups:scotland": "./tools/mockup-studio/mockups.sh --collection scotland --backup"
+},
   "dependencies": {
     "@next/third-parties": "^16.2.12",
     "next": "16.2.10",
