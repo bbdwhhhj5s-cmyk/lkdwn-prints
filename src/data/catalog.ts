@@ -73,7 +73,9 @@ const mockupGalleries: Partial<Record<string, string>> = {
   "looking-up-in-prague": "looking-up-in-prague-lowered",
 };
 
-const galleryForArtwork = (slug: string, image: string) => {
+const galleryForArtwork = (_slug: string, image: string) => {
+  return [image];
+};
   const mockupDirectory = mockupGalleries[slug];
 
   if (!mockupDirectory) {

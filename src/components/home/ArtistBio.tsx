@@ -1,49 +1,87 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ArtistBio() {
   return (
-    <section id="photographer" className="scroll-mt-28 pb-40">
-      <div className="mx-auto max-w-7xl px-8">
-        <div className="border-y border-white/10 py-20 md:py-28">
-          <div className="grid items-center gap-12 md:grid-cols-[0.75fr_1.25fr] md:gap-20">
-            <div className="relative aspect-[4/3] w-full max-w-md justify-self-center overflow-hidden rounded-[32px] border border-white/10 bg-[#0D1218]">
+    <section
+      id="photographer"
+      aria-labelledby="artist-bio-title"
+      className="scroll-mt-28 bg-[#090D12]"
+    >
+      <div className="mx-auto max-w-7xl px-6 py-28 sm:px-8 md:py-36 lg:px-12 lg:py-44">
+        <div className="grid items-center gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
+          <div className="relative">
+            <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#0D1218]">
               <Image
                 src="/images/about/john-mchugh.png"
-                alt="John McHugh, the Glasgow photographer behind LKDWN Prints"
+                alt="John McHugh, Glasgow-based fine art photographer and founder of LKDWN Prints"
                 fill
-                sizes="(max-width: 767px) 100vw, 45vw"
+                sizes="(max-width: 1023px) 100vw, 42vw"
                 className="object-cover"
               />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent" />
+
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"
+              />
             </div>
 
-            <div className="max-w-2xl">
-              <p className="text-xs uppercase tracking-[0.45em] text-[#D6B36A]">
-                The Photographer
+            <p className="mt-5 text-xs uppercase tracking-[0.32em] text-white/45">
+              John McHugh · Glasgow
+            </p>
+          </div>
+
+          <div className="max-w-2xl">
+            <p className="text-xs uppercase tracking-[0.45em] text-[#D6B36A]">
+              The Photographer
+            </p>
+
+            <h2
+              id="artist-bio-title"
+              className="heading mt-7 text-5xl leading-[0.95] text-white sm:text-6xl md:text-7xl"
+            >
+              A Designer&apos;s Eye.
+              <br />
+              A Photographer&apos;s Instinct.
+            </h2>
+
+            <div
+              aria-hidden="true"
+              className="mt-10 h-px w-24 bg-[#D6B36A]"
+            />
+
+            <div className="mt-12 space-y-8 text-lg leading-9 text-white/70 md:text-xl md:leading-10">
+              <p>
+                I&apos;m John McHugh, a Glasgow-based fine art photographer and
+                retired graphic designer. Decades spent working with
+                composition, typography, colour and visual balance continue to
+                shape the way I see and photograph the world.
               </p>
-              <h2 className="heading mt-6 text-5xl leading-tight md:text-6xl">
-                John
-                <br />
-                McHugh
-              </h2>
 
-              <div className="mt-10 space-y-7 text-lg leading-9 text-white/70 md:text-xl md:leading-10">
-                <p>
-                  I&apos;m John McHugh, a Glasgow photographer and retired
-                  graphic designer. A long career working with image,
-                  composition and colour still shapes the way I see the world.
-                </p>
-                <p>
-                  LKDWN Prints brings together the photographs I most want to
-                  share—fleeting light, striking places and moments worth
-                  holding onto. After all, what else would I do with them?
-                </p>
-                <p>
-                  Every image in these collections was photographed and edited
-                  by me, with care, curiosity and love.
-                </p>
-              </div>
+              <p>
+                LKDWN Prints brings together a curated body of work from
+                Scotland, Paris, Porto and Prague. Each collection explores
+                light, atmosphere, architecture and landscape, with every image
+                selected for its ability to hold a sense of place long after
+                the moment has passed.
+              </p>
+
+              <p>
+                Every photograph is captured, edited and prepared for print by
+                me, then professionally produced using museum-quality archival
+                materials. The result is fine art photography created to bring
+                lasting atmosphere and character into the spaces where it is
+                displayed.
+              </p>
             </div>
+
+            <Link
+              href="/about"
+              className="mt-12 inline-flex items-center gap-4 border-b border-[#D6B36A] pb-3 text-sm uppercase tracking-[0.3em] text-white transition duration-300 hover:gap-6 hover:text-[#D6B36A]"
+            >
+              Read the full story
+              <span aria-hidden="true">→</span>
+            </Link>
           </div>
         </div>
       </div>

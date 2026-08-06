@@ -5,9 +5,14 @@ type CollectionHeroProps = {
   collection: Collection;
 };
 
-export default function CollectionHero({ collection }: CollectionHeroProps) {
+export default function CollectionHero({
+  collection,
+}: CollectionHeroProps) {
   return (
-    <section className="relative min-h-[92svh] overflow-hidden">
+    <section
+      aria-labelledby="collection-title"
+      className="relative h-screen overflow-hidden bg-black"
+    >
       <Image
         src={collection.heroImage}
         alt={collection.heroAlt}
@@ -17,17 +22,35 @@ export default function CollectionHero({ collection }: CollectionHeroProps) {
         className="object-cover"
       />
 
-      <div className="absolute inset-0 bg-gradient-to-t from-[#07131C] via-black/20 to-black/40" />
+      {/* Cinematic overlay */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-gradient-to-b
+        from-black/45
+        via-black/10
+        to-[#090D12]"
+      />
 
-      <div className="absolute inset-x-0 bottom-16 px-8 md:bottom-24">
-        <div className="mx-auto max-w-7xl">
-          <p className="mb-5 text-xs uppercase tracking-[0.45em] text-[#C9A567]">
-            Collection
+      {/* Exhibition title */}
+      <div className="absolute inset-x-0 bottom-0">
+        <div className="mx-auto max-w-7xl px-8 pb-24 md:pb-32">
+          <p className="body-text text-xs uppercase tracking-[0.45em] text-[#D6B36A]">
+            Exhibition I
           </p>
-          <h1 className="heading text-6xl leading-none text-white md:text-8xl">
+
+          <h1
+            id="collection-title"
+            className="heading mt-6 text-6xl leading-[0.9] text-white md:text-8xl lg:text-9xl"
+          >
             {collection.name}
           </h1>
-          <p className="mt-7 max-w-2xl text-lg leading-relaxed text-white/75 md:text-xl">
+
+          <div
+            aria-hidden="true"
+            className="mt-10 h-px w-24 bg-[#D6B36A]"
+          />
+
+          <p className="mt-10 max-w-3xl text-lg leading-9 text-white/75 md:text-xl md:leading-10">
             {collection.description}
           </p>
         </div>

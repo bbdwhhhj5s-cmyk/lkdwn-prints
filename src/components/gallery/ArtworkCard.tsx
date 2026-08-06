@@ -1,5 +1,6 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+
 import type { Artwork } from "@/data/catalog";
 import { routes } from "@/lib/routes";
 
@@ -8,27 +9,55 @@ type ArtworkCardProps = {
 };
 
 export default function ArtworkCard({ artwork }: ArtworkCardProps) {
+  const aspectClass =
+    artwork.orientation === "portrait"
+      ? "aspect-[4/5]"
+      : "aspect-[3/2]";
+
   return (
-    <Link
-      href={routes.artwork(artwork.slug)}
-      className="group block"
-    >
-      <div className="aspect-[4/5] overflow-hidden bg-[#102632]">
-        <Image
-          src={artwork.image}
-          alt={artwork.alt}
-          width={artwork.orientation === "portrait" ? 900 : 1200}
-          height={artwork.orientation === "portrait" ? 1200 : 900}
-          sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
-          className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-        />
-      </div>
-      <div className="flex items-baseline justify-between gap-4 pt-4">
-        <h3 className="heading text-2xl text-white">{artwork.title}</h3>
-        <span className="text-xs uppercase tracking-[0.2em] text-[#9AA4AE]">
-          {artwork.location}
-        </span>
-      </div>
-    </Link>
+    <article>
+      <Link
+        href={routes.artwork(artwork.slug)}
+        aria-label={`View ${artwork.title}, photographed in ${artwork.location}`}
+        className="group block"
+      >
+        <div
+          className={`relative overflow-hidden bg-[#0D1218] ${aspectClass}`}
+        >
+          <Image
+            src={artwork.image}
+            alt={artwork.alt}
+            fill
+            sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 46vw"
+            className="object-cover transition-transform duration-[1800ms] ease-out group-hover:scale-[1.025]"
+          />
+
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-black/0 transition-colors duration-700 group-hover:bg-black/10"
+          />
+
+          <span className="absolute bottom-6 right-6 translate-y-2 text-xs uppercase tracking-[0.28em] text-white opacity-0 transition duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+            View artwork →
+          </span>
+        </div>
+
+        <div className="border-b border-white/10 pb-7 pt-6">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <h3 className="heading text-3xl leading-none text-white transition-colors duration-300 group-hover:text-[#D6B36A] md:text-4xl">
+              {artwork.title}
+            </h3>
+
+            <p className="text-xs uppercase tracking-[0.28em] text-white/45">
+              {artwork.location}
+            </p>
+          </div>
+
+          <p className="mt-4 text-xs uppercase tracking-[0.25em] text-white/35">
+            Fine art photograph
+          </p>
+        </div>
+      </Link>
+    </article>
   );
 }

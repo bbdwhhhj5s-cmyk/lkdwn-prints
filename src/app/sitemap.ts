@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { artworks, collections } from "@/data/catalog";
 import { routes } from "@/lib/routes";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://lkdwnprints.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://lkdwnprints.co.uk";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

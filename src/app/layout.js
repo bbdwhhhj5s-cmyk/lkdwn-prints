@@ -1,11 +1,14 @@
+import Script from "next/script";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
+
 import CartProvider from "@/components/cart/CartProvider";
 import Footer from "@/components/layout/Footer";
 import JsonLd from "@/components/seo/JsonLd";
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://lkdwnprints.com";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.lkdwnprints.co.uk";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -19,15 +22,19 @@ const manrope = Manrope({
 });
 
 export const metadata = {
-  metadataBase: new URL(
-    siteUrl,
-  ),
+  metadataBase: new URL(siteUrl),
+
   title: {
     default: "LKDWN Prints",
     template: "%s | LKDWN Prints",
   },
-  description: "Museum-quality fine art photography across Scotland and Europe.",
+
+  description:
+    "Museum-quality fine art photography across Scotland and Europe.",
+
   keywords: [
+    "landscape photography journal",
+"Scottish photography journal",
     "fine art photography",
     "photography prints",
     "Scottish landscape photography",
@@ -35,14 +42,24 @@ export const metadata = {
     "museum-quality prints",
     "John McHugh photographer",
   ],
+
   applicationName: "LKDWN Prints",
-  authors: [{ name: "John McHugh", url: siteUrl }],
+
+  authors: [
+    {
+      name: "John McHugh",
+      url: siteUrl,
+    },
+  ],
+
   creator: "John McHugh",
   publisher: "LKDWN Prints",
   category: "Fine art photography",
+
   alternates: {
     canonical: "/",
   },
+
   openGraph: {
     title: "LKDWN Prints",
     description:
@@ -58,6 +75,7 @@ export const metadata = {
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
     title: "LKDWN Prints",
@@ -114,10 +132,28 @@ export default function RootLayout({ children }) {
             },
           ]}
         />
+
         <CartProvider>
           {children}
           <Footer />
         </CartProvider>
+
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-ZLDKX8B07D"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-ZLDKX8B07D');
+          `}
+        </Script>
+
+        <SpeedInsights />
       </body>
     </html>
   );

@@ -1,6 +1,8 @@
 import Link from "next/link";
-import type { Collection } from "@/data/catalog";
+
 import ArtworkCard from "@/components/gallery/ArtworkCard";
+import type { Collection } from "@/data/catalog";
+import { journalArticles } from "@/data/journal";
 import { routes } from "@/lib/routes";
 
 type CollectionSectionProps = {
@@ -18,6 +20,10 @@ export default function CollectionSection({
 }: CollectionSectionProps) {
   const Heading = pageHeading ? "h1" : "h2";
 
+  const relatedJournalArticles = journalArticles.filter(
+    (article) => article.collectionSlug === collection.slug,
+  );
+
   return (
     <section id={collection.slug} className="scroll-mt-24 py-20">
       {showIntroduction ? (
@@ -31,9 +37,11 @@ export default function CollectionSection({
               </Link>
             )}
           </p>
+
           <Heading className="heading text-5xl leading-tight text-white md:text-7xl">
             {collection.title}
           </Heading>
+
           <p className="mt-7 text-lg leading-relaxed text-[#9AA4AE]">
             {collection.description}
           </p>
@@ -51,6 +59,47 @@ export default function CollectionSection({
           New work coming soon.
         </p>
       )}
+
+      {relatedJournalArticles.length > 0 ? (
+        <aside
+          aria-labelledby={`${collection.slug}-journal-heading`}
+          className="mt-28 border-t border-white/10 pt-16 md:mt-36 md:pt-20"
+        >
+          <p className="text-xs uppercase tracking-[0.35em] text-[#C9A567]">
+            From the Journal
+          </p>
+
+          <div className="mt-10 space-y-14">
+            {relatedJournalArticles.map((article) => (
+              <article
+                key={article.slug}
+                className="grid gap-8 md:grid-cols-[1fr_auto] md:items-end"
+              >
+                <div className="max-w-3xl">
+                  <h2
+                    id={`${collection.slug}-journal-heading`}
+                    className="heading text-4xl leading-tight text-white md:text-5xl"
+                  >
+                    {article.title}
+                  </h2>
+
+                  <p className="mt-6 max-w-2xl text-lg leading-8 text-[#9AA4AE]">
+                    {article.excerpt}
+                  </p>
+                </div>
+
+                <Link
+                  href={routes.journalArticle(article.slug)}
+                  className="inline-flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-white transition-opacity hover:opacity-70"
+                >
+                  Read Story
+                  <span aria-hidden="true">→</span>
+                </Link>
+              </article>
+            ))}
+          </div>
+        </aside>
+      ) : null}
     </section>
   );
 }

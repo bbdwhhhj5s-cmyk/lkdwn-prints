@@ -13,7 +13,7 @@ import {
 import { routes } from "@/lib/routes";
 
 export const dynamicParams = false;
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://lkdwnprints.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://lkdwnprints.co.uk";
 
 export function generateStaticParams() {
   return collections.map(({ slug }) => ({ slug }));
