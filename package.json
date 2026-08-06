@@ -2,18 +2,18 @@
   "name": "lkdwn-prints",
   "version": "0.1.0",
   "private": true,
- "scripts": {
-  "dev": "next dev",
-  "build": "next build",
-  "start": "next start",
-  "lint": "eslint",
-
-  "mockups:setup": "./tools/mockup-studio/bootstrap.sh",
-  "mockups": "./tools/mockup-studio/mockups.sh",
-  "mockups:scotland": "./tools/mockup-studio/mockups.sh --collection scotland --backup"
-},
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "mockups:setup": "./tools/mockup-studio/bootstrap.sh",
+    "mockups": "./tools/mockup-studio/mockups.sh",
+    "mockups:scotland": "./tools/mockup-studio/mockups.sh --collection scotland --backup"
+  },
   "dependencies": {
     "@next/third-parties": "^16.2.12",
+    "@vercel/speed-insights": "^2.0.0",
     "next": "16.2.10",
     "react": "19.2.4",
     "react-dom": "19.2.4",

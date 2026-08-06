@@ -23,9 +23,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const article = getJournalArticle(slug);
 
-  if (!article) {
-    return {};
-  }
+  if (!article) return {};
 
   return {
     title: article.title,
@@ -37,12 +35,7 @@ export async function generateMetadata({
       title: article.title,
       description: article.description,
       type: "article",
-      images: [
-        {
-          url: article.image,
-          alt: article.imageAlt,
-        },
-      ],
+      images: [{ url: article.image, alt: article.imageAlt }],
     },
   };
 }
@@ -53,28 +46,26 @@ export default async function JournalArticlePage({
   const { slug } = await params;
   const article = getJournalArticle(slug);
 
-  if (!article) {
-    notFound();
-  }
+  if (!article) notFound();
 
   return (
     <main className="min-h-screen bg-[#090D12] text-white">
       <Navbar />
 
       <article>
-        <header className="mx-auto max-w-6xl px-8 pb-16 pt-40 text-center md:pb-24 md:pt-52">
+        <header className="mx-auto max-w-5xl px-8 pb-16 pt-40 text-center md:pb-24 md:pt-48">
           <Link
             href={routes.journal}
-            className="text-xs uppercase tracking-[0.4em] text-[#D6B36A] transition-opacity hover:opacity-70"
+            className="text-xs uppercase tracking-[0.35em] text-[#D6B36A]"
           >
             Journal
           </Link>
 
-          <h1 className="heading mx-auto mt-8 max-w-5xl text-5xl leading-[0.98] md:text-7xl lg:text-8xl">
+          <h1 className="heading mx-auto mt-8 max-w-4xl text-5xl leading-[0.98] md:text-7xl lg:text-8xl">
             {article.title}
           </h1>
 
-          <p className="mx-auto mt-10 max-w-3xl text-lg leading-9 text-white/65 md:text-xl">
+          <p className="mx-auto mt-10 max-w-2xl text-lg leading-9 text-white/65 md:text-xl">
             {article.excerpt}
           </p>
 
@@ -83,40 +74,34 @@ export default async function JournalArticlePage({
           </p>
         </header>
 
-        <div className="mx-auto flex max-w-[96rem] items-center justify-center px-4 md:px-8">
+        <div className="mx-auto flex max-w-7xl items-center justify-center px-8">
           <Image
             src={article.image}
             alt={article.imageAlt}
             width={article.imageOrientation === "portrait" ? 1000 : 1800}
             height={article.imageOrientation === "portrait" ? 1400 : 1125}
-            sizes="(max-width: 1535px) calc(100vw - 2rem), 1472px"
+            sizes="(max-width: 1279px) calc(100vw - 4rem), 1216px"
             priority
-            className="h-auto max-h-[58rem] w-auto max-w-full object-contain"
+            className="h-auto max-h-[52rem] w-auto max-w-full object-contain"
           />
         </div>
 
-        <div className="mx-auto max-w-3xl px-8 py-24 md:py-36">
-          <blockquote className="mb-20 border-l border-[#D6B36A] pl-8 md:mb-28 md:pl-10">
-            <p className="heading text-3xl leading-relaxed text-white md:text-5xl">
-              “The photograph is only the beginning.”
-            </p>
-          </blockquote>
-
-          <div className="space-y-12 text-xl leading-10 text-white/75 md:text-[1.45rem] md:leading-[2.5rem]">
+        <div className="mx-auto max-w-3xl px-8 py-24 md:py-32">
+          <div className="space-y-10 text-lg leading-9 text-white/72 md:text-xl md:leading-10">
             {article.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
 
           {article.collectionSlug && article.collectionLabel ? (
-            <aside className="mt-28 border-t border-white/10 pt-14">
-              <p className="text-xs uppercase tracking-[0.4em] text-[#D6B36A]">
+            <aside className="mt-24 border-t border-white/10 pt-12">
+              <p className="text-xs uppercase tracking-[0.35em] text-[#D6B36A]">
                 Related exhibition
               </p>
 
               <Link
                 href={routes.collection(article.collectionSlug)}
-                className="heading mt-7 inline-flex items-center gap-4 text-3xl text-white transition-opacity hover:opacity-70 md:text-4xl"
+                className="heading mt-6 inline-flex items-center gap-4 text-3xl md:text-4xl"
               >
                 {article.collectionLabel}
                 <span aria-hidden="true">→</span>

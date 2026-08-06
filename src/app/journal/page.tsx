@@ -9,7 +9,7 @@ import { routes } from "@/lib/routes";
 export const metadata: Metadata = {
   title: "Journal",
   description:
-    "Stories about landscape, light, creative interpretation and the photographs behind LKDWN Prints.",
+    "Stories about landscape photography, changing light and the places behind LKDWN Prints.",
   alternates: {
     canonical: routes.journal,
   },
@@ -30,8 +30,7 @@ export default function JournalPage() {
         </h1>
 
         <p className="mt-10 max-w-2xl text-lg leading-9 text-white/65 md:text-xl">
-          Reflections on landscape, creative interpretation and the joyful
-          moments that begin with a photograph.
+          Notes on landscape, light, memory and returning to a place over time.
         </p>
       </header>
 
@@ -73,9 +72,8 @@ export default function JournalPage() {
                   {article.excerpt}
                 </p>
 
-                <span className="mt-10 inline-flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-white">
-                  Read Journal
-                  <span aria-hidden="true">→</span>
+                <span className="mt-10 inline-flex items-center gap-3 text-xs uppercase tracking-[0.3em]">
+                  Read Journal <span aria-hidden="true">→</span>
                 </span>
               </div>
             </Link>
