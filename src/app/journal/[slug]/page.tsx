@@ -138,6 +138,27 @@ export default async function JournalArticlePage({
             </aside>
           ) : null}
 
+          {article.relatedLinks?.length ? (
+            <aside className="mt-20 border-t border-white/10 pt-12">
+              <p className="text-xs uppercase tracking-[0.35em] text-[#D6B36A]">
+                Further information
+              </p>
+
+              <div className="mt-7 flex flex-col items-start gap-5">
+                {article.relatedLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="inline-flex items-center gap-3 text-sm uppercase tracking-[0.25em] transition-opacity hover:opacity-70"
+                  >
+                    {link.label}
+                    <span aria-hidden="true">→</span>
+                  </Link>
+                ))}
+              </div>
+            </aside>
+          ) : null}
+
           {article.collectionSlug && article.collectionLabel ? (
             <aside className="mt-24 border-t border-white/10 pt-12">
               <p className="text-xs uppercase tracking-[0.35em] text-[#D6B36A]">

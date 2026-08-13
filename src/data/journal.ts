@@ -20,9 +20,140 @@ export type JournalArticle = {
     title: string;
     description: string;
   }[];
+  relatedLinks?: {
+    href: string;
+    label: string;
+  }[];
 };
 
 export const journalArticles: JournalArticle[] = [
+  {
+    slug: "choosing-the-right-size-fine-art-print",
+    title: "How to Choose the Right Size Fine Art Print for Your Wall",
+    excerpt:
+      "A practical guide to choosing between A2, A1 and A0 fine art prints while keeping the photograph and the room in balance.",
+    description:
+      "Learn how to choose the right fine art print size for your wall, with practical guidance on A2, A1 and A0 prints, orientation, viewing distance and framing.",
+    publishedAt: "2026-08-13",
+    location: "The Collector’s Guide",
+    image: "/images/mockups/buachaille-etive-mor/living-room.jpg",
+    imageAlt:
+      "A landscape-format fine art photography print displayed above a sofa in a contemporary living room",
+    imageOrientation: "landscape",
+    paragraphs: [],
+    sections: [
+      {
+        heading: "",
+        paragraphs: [
+          "Choosing a photograph is an emotional decision. Choosing its size is a practical one, but it has a considerable effect on how the finished artwork feels within a room.",
+          "A print that is too small can become disconnected from the furniture and architecture around it. One that is too large can leave the room without enough space to breathe.",
+          "The aim is not simply to fill a wall. It is to give the photograph enough presence for its light, detail and atmosphere to be experienced properly.",
+        ],
+      },
+      {
+        heading: "Understanding A2, A1 and A0",
+        paragraphs: [
+          "LKDWN fine art prints are available in three standard A-series sizes. The proportions remain identical as the print becomes larger, so the relationship between the height and width is always consistent.",
+          "A2 measures 42 × 59.4 cm. A1 measures 59.4 × 84.1 cm. A0 measures 84.1 × 118.9 cm. For landscape photographs those measurements are rotated, but the proportion remains the same.",
+          "This consistency matters. Portrait photographs remain clearly portrait, landscape photographs remain clearly landscape, and the image is never stretched into an artificial frame shape.",
+        ],
+      },
+      {
+        heading: "When A2 works best",
+        paragraphs: [
+          "A2 is the most intimate of the three sizes.",
+          "It works well above a console, beside a reading chair, in a bedroom, study or hallway, and on walls where the photograph will often be seen at close range. It can also suit a smaller living space where a larger print would dominate the architecture.",
+          "A2 still carries considerable detail, but its relationship with the viewer is quieter and more personal. It rewards approaching the photograph rather than asking to be the focal point from across the room.",
+        ],
+      },
+      {
+        heading: "When to choose A1",
+        paragraphs: [
+          "A1 is a versatile size for a principal artwork within the home.",
+          "It has enough scale to hold the wall above a sofa, bed, sideboard or desk while leaving room around the frame. In many living rooms and bedrooms, it creates the strongest balance between presence and restraint.",
+          "For landscapes with open skies, water or distant detail, A1 gives the photograph room to unfold without making the room feel arranged around a single object.",
+        ],
+      },
+      {
+        heading: "When A0 becomes the right choice",
+        paragraphs: [
+          "A0 is intended for a wall that can support a genuinely large photograph.",
+          "It suits generous living spaces, entrance halls, stairwells, hospitality settings and commercial interiors where the artwork needs to remain visually strong from a distance.",
+          "At this scale, a landscape photograph can begin to feel architectural. Weather, texture and small elements within the scene become more apparent, creating a stronger sense of looking into a place rather than at a picture.",
+          "A0 prints are supplied unframed, allowing framing to be selected for the particular room and installation.",
+        ],
+      },
+      {
+        heading: "Measure the wall, then consider the furniture",
+        paragraphs: [
+          "The empty wall is only part of the calculation. Furniture provides the visual anchor beneath or beside the artwork.",
+          "Above a sofa, bed or sideboard, the framed work should relate clearly to the width below it without matching it edge to edge. Leaving visible wall around the frame gives the artwork more authority and prevents the arrangement from feeling crowded.",
+          "Before choosing, mark the proposed outer dimensions on the wall with low-tack tape or paper. Step back to the position from which you will usually enter or view the room. This simple test is far more reliable than judging dimensions on a screen.",
+        ],
+      },
+      {
+        heading: "Portrait and landscape change the balance",
+        paragraphs: [
+          "Orientation affects how a print occupies the wall even when its paper size is the same.",
+          "A landscape print spreads visual weight horizontally and naturally suits spaces above sofas, beds and desks. A portrait print draws the eye upwards and can bring structure to narrower walls, spaces between windows or rooms with generous ceiling height.",
+          "Choose the orientation that works with the architecture, but let the photograph remain true to itself. The room should adapt to the artwork rather than forcing the artwork into the wrong shape.",
+        ],
+      },
+      {
+        heading: "Think about viewing distance",
+        paragraphs: [
+          "A print seen from across a room needs enough scale for its main shapes, light and atmosphere to remain clear. A photograph in a hallway or beside a desk can work at a smaller size because the viewer naturally comes closer.",
+          "Larger is not automatically better. The right size is the one that allows both the overall composition and the quieter details to be appreciated from the way the room is actually used.",
+        ],
+      },
+      {
+        heading: "Allow for the frame",
+        paragraphs: [
+          "The stated A-size refers to the print itself. A frame and mount increase the final dimensions on the wall.",
+          "A2 and A1 photographs can be supplied ready to hang in black or natural wood frames with shatterproof plexiglass. The surrounding frame gives the finished work additional presence, so always consider the complete framed size when planning the wall.",
+          "The mount should support the photograph without making it appear square or changing its underlying A-series proportion.",
+        ],
+      },
+      {
+        heading: "Choose for the room you live in",
+        paragraphs: [
+          "There is no single correct size for every home.",
+          "A restrained A2 can become the photograph you notice every morning. An A1 can quietly hold a living room together. An A0 can create the experience of standing before a landscape rather than simply viewing it.",
+          "The best choice respects both the photograph and the space around it. When those two things are in balance, the print begins to feel as though it has always belonged there.",
+        ],
+      },
+    ],
+    featuredArtworks: [
+      {
+        slug: "buachaille-etive-mor",
+        title: "Buachaille Etive Mòr",
+        description:
+          "A landscape with the scale and atmosphere to work particularly well as a principal A1 or A0 print.",
+      },
+      {
+        slug: "metropolitain",
+        title: "Métropolitain",
+        description:
+          "A strong portrait composition suited to a narrower wall or space with generous height.",
+      },
+      {
+        slug: "blue-hour-on-the-douro",
+        title: "Blue Hour on the Douro",
+        description:
+          "A wide riverside scene whose light and fine detail become increasingly immersive at larger sizes.",
+      },
+    ],
+    relatedLinks: [
+      {
+        href: "/collections",
+        label: "Explore all collections",
+      },
+      {
+        href: "/print-delivery",
+        label: "Print, framing and delivery information",
+      },
+    ],
+  },
   {
     slug: "prague-light-stone-and-silence",
     title: "Prague: Light, Stone and Silence",
