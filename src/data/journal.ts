@@ -24,6 +24,101 @@ export type JournalArticle = {
 
 export const journalArticles: JournalArticle[] = [
   {
+    slug: "photographing-paris-beyond-the-postcard",
+    title: "Photographing Paris Beyond the Postcard",
+    excerpt:
+      "Looking past the familiar landmarks to find quieter moments of light, architecture and everyday life in Paris.",
+    description:
+      "John McHugh reflects on photographing Paris beyond its familiar postcard views, exploring changing light, architecture and everyday life through fine art photography.",
+    publishedAt: "2026-08-13",
+    location: "Paris, France",
+    image: "/images/paris/across-the-seine.jpg",
+    imageAlt:
+      "The Eiffel Tower seen across the River Seine beneath dramatic evening clouds",
+    imageOrientation: "landscape",
+    collectionSlug: "paris",
+    collectionLabel: "Explore the Paris Collection",
+    paragraphs: [],
+    sections: [
+      {
+        heading: "",
+        paragraphs: [
+          "Paris arrives with its own collection of familiar images. The Eiffel Tower, the Seine, café terraces and pale stone façades have been photographed countless times.",
+          "That familiarity is both the attraction and the challenge. I am not trying to pretend those landmarks do not matter. I am trying to look beyond the version of Paris that already exists in our minds and find a moment that feels personally observed.",
+          "Sometimes that moment is hidden in a reflection, a passing figure or a sudden change in the sky. Sometimes it appears when a well-known structure is seen from an unfamiliar angle.",
+        ],
+      },
+      {
+        heading: "Looking beyond the landmark",
+        paragraphs: [
+          "A landmark can easily dominate a photograph. Its reputation arrives before the image does.",
+          "I find it more interesting when the Eiffel Tower or the Louvre becomes part of a larger visual relationship: ironwork against open sky, architecture seen through glass, or a distant silhouette held beneath changing weather.",
+          "The place remains recognisable, but recognition is only the beginning. The photograph needs its own structure, atmosphere and reason to exist.",
+        ],
+      },
+      {
+        heading: "Paris is built from layers",
+        paragraphs: [
+          "Paris rewards looking up, looking through and looking across.",
+          "Old stone sits beside glass and steel. Art Nouveau entrances rise into turbulent skies. Zinc rooftops, balconies, trees and streets gather into dense layers that change as you move through the city.",
+          "These relationships are often more compelling to me than a clear view of a single monument. They describe how the city feels: ordered and accidental, historic and contemporary, monumental and intimate at the same time.",
+        ],
+      },
+      {
+        heading: "Waiting for the city to change",
+        paragraphs: [
+          "Even in a busy city, photography asks for patience.",
+          "Light moves across façades. Clouds gather above the Seine. A street briefly clears, or a person enters the frame and gives scale to the architecture around them.",
+          "Those small changes can turn a familiar scene into something that belongs to a particular moment. The photograph is made not only from where I stand, but from deciding when the relationships inside the frame have come together.",
+        ],
+      },
+      {
+        heading: "From observation to interpretation",
+        paragraphs: [
+          "The camera records the raw material, but the finished photograph continues to take shape afterwards.",
+          "When I return to the image, I work with tone, colour, contrast and atmosphere. I may draw attention towards light reflected on the river, hold detail in a dramatic sky or simplify competing elements so that the structure of the photograph becomes clearer.",
+          "This is not separate from the act of photographing. It is another part of the same creative process: giving the image more life and allowing a new story to emerge from the original moment.",
+        ],
+      },
+      {
+        heading: "A Paris print within a home",
+        paragraphs: [
+          "Paris photography can bring very different qualities into a room.",
+          "A landscape view across the Seine creates space and atmosphere. A portrait study of ironwork or architecture has a more graphic presence and can suit a narrower wall. Street scenes can introduce colour, movement and the feeling of everyday life.",
+          "The strongest choice is not necessarily the most recognisable view. It is the photograph that continues to hold your attention after the first glance and gives you something new each time you return to it.",
+        ],
+      },
+      {
+        heading: "The city beyond the postcard",
+        paragraphs: [
+          "For me, photographing Paris is not about avoiding beauty or familiarity. It is about staying with the city long enough for those familiar surfaces to shift.",
+          "Beyond the postcard is another Paris: one made from weather, geometry, reflections and brief human moments.",
+          "That is the Paris I want the finished prints to hold — recognisable, but never entirely predictable.",
+        ],
+      },
+    ],
+    featuredArtworks: [
+      {
+        slug: "across-the-seine",
+        title: "Across the Seine",
+        description:
+          "The Eiffel Tower rises beyond the river beneath a dramatic break in the evening clouds.",
+      },
+      {
+        slug: "eiffel-ironwork",
+        title: "Eiffel Ironwork",
+        description:
+          "The structure of the Eiffel Tower seen from beneath its sweeping iron arches.",
+      },
+      {
+        slug: "metropolitain",
+        title: "Métropolitain",
+        description:
+          "A classic Art Nouveau Métropolitain sign reaching into a turbulent Paris sky.",
+      },
+    ],
+  },
+  {
     slug: "fine-art-photography-prints-scotland",
     title:
       "Fine Art Photography Prints of Scotland: Choosing a Landscape for Your Home",
