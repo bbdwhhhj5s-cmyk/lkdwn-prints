@@ -24,6 +24,101 @@ export type JournalArticle = {
 
 export const journalArticles: JournalArticle[] = [
   {
+    slug: "porto-in-blue-and-gold",
+    title: "Porto in Blue and Gold: Photographing the City’s Light and Architecture",
+    excerpt:
+      "A photographic journey through Porto’s riverside light, tiled façades and the shifting colours of the Douro.",
+    description:
+      "John McHugh reflects on photographing Porto, from the blue hour on the Douro to the city’s ochre façades, tiled architecture and layered riverside light.",
+    publishedAt: "2026-08-13",
+    location: "Porto, Portugal",
+    image: "/images/porto/porto-9.jpg",
+    imageAlt:
+      "Porto's colourful Ribeira waterfront and Dom Luís I Bridge beside the Douro",
+    imageOrientation: "landscape",
+    collectionSlug: "porto",
+    collectionLabel: "Explore the Porto Collection",
+    paragraphs: [],
+    sections: [
+      {
+        heading: "",
+        paragraphs: [
+          "Porto is a city of colour, but it is the light that holds everything together.",
+          "Blue tiles, ochre plaster, red roofs and dark iron balconies gather along steep streets before descending towards the Douro. As the day changes, those colours move between brightness and shadow, warmth and coolness, detail and silhouette.",
+          "That constant change is what draws me through the city with a camera. Porto never feels like one fixed view. It reveals itself through layers.",
+        ],
+      },
+      {
+        heading: "The Douro as a line through the city",
+        paragraphs: [
+          "The river gives Porto its sense of space.",
+          "From above, the Douro separates and connects the city at the same time. At street level, it reflects façades, bridges, boats and changing skies. The traditional rabelo boats introduce a quieter rhythm against the dense architecture of the Ribeira.",
+          "I often use the river as a visual path through a photograph. It leads the eye towards the city, creates breathing room around the architecture and records the colour of the light in a way that stone cannot.",
+        ],
+      },
+      {
+        heading: "Blue hour and golden stone",
+        paragraphs: [
+          "The transition between daylight and evening is particularly important in Porto.",
+          "As the sky cools towards blue, the first lights appear along the river and the warmer surfaces of the city begin to glow. The contrast does not last long, but for a few minutes Porto seems to hold two kinds of light at once.",
+          "Those moments are less about photographing darkness than balancing colour: the cool atmosphere of the river against the gold and terracotta of the city.",
+        ],
+      },
+      {
+        heading: "Architecture shaped by time",
+        paragraphs: [
+          "Porto’s buildings are compelling because they carry visible histories.",
+          "Patterned tiles sit beside weathered plaster. Iron balconies project from narrow façades. Churches rise above closely packed roofs, while the structure of Dom Luís I Bridge cuts a bold industrial line across the older city.",
+          "I am interested in those contrasts rather than perfection. Wear, repair and irregularity give the architecture a human presence. They turn a building from a subject into evidence of the lives that have passed through it.",
+        ],
+      },
+      {
+        heading: "Finding order in a layered place",
+        paragraphs: [
+          "Porto can appear visually crowded. Roofs overlap, streets climb sharply and façades compete for attention.",
+          "The challenge is to find a structure within that density. Sometimes it comes from repeated windows or rooflines. Sometimes a figure, a shadow or a single bright wall gives the composition its centre.",
+          "The photograph begins when those separate elements stop feeling accidental and start speaking to one another.",
+        ],
+      },
+      {
+        heading: "The creative process continues",
+        paragraphs: [
+          "What the camera records is the beginning of the final image.",
+          "When I return to a Porto photograph, I work to preserve the relationship between its colours and its atmosphere. I may hold detail in a bright façade, deepen the blue of the river or simplify a busy area so that the movement through the photograph becomes clearer.",
+          "The aim is not to polish away the character of the city. It is to give more life to the moment and shape the story that first made me stop.",
+        ],
+      },
+      {
+        heading: "Living with a Porto photograph",
+        paragraphs: [
+          "Porto prints can bring warmth and architectural character into an interior without becoming decorative in the ordinary sense.",
+          "A wide view of the Ribeira and bridge creates openness and works naturally above a sofa, bed or desk. A portrait study of a weathered façade or hillside church brings height, texture and a more intimate sense of place.",
+          "What matters most is the feeling you return to: the calm of the river, the energy of the streets, or the particular balance of blue and gold that belongs to Porto.",
+        ],
+      },
+    ],
+    featuredArtworks: [
+      {
+        slug: "ribeira-and-the-bridge",
+        title: "Ribeira and the Bridge",
+        description:
+          "The colourful Ribeira waterfront follows the Douro towards the arch of Dom Luís I Bridge.",
+      },
+      {
+        slug: "blue-hour-on-the-douro",
+        title: "Blue Hour on the Douro",
+        description:
+          "Rabelo boats rest on blue water as the first city lights shimmer across the river.",
+      },
+      {
+        slug: "weathered-porto",
+        title: "Weathered Porto",
+        description:
+          "Iron balconies, patterned stone and ochre plaster carrying the texture of generations.",
+      },
+    ],
+  },
+  {
     slug: "photographing-paris-beyond-the-postcard",
     title: "Photographing Paris Beyond the Postcard",
     excerpt:
