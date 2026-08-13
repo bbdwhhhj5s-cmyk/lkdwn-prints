@@ -87,11 +87,56 @@ export default async function JournalArticlePage({
         </div>
 
         <div className="mx-auto max-w-3xl px-8 py-24 md:py-32">
-          <div className="space-y-10 text-lg leading-9 text-white/72 md:text-xl md:leading-10">
-            {article.paragraphs.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
+          {article.sections ? (
+            <div className="space-y-20">
+              {article.sections.map((section, sectionIndex) => (
+                <section key={section.heading || `introduction-${sectionIndex}`}>
+                  {section.heading ? (
+                    <h2 className="heading mb-8 text-3xl leading-tight text-white md:text-5xl">
+                      {section.heading}
+                    </h2>
+                  ) : null}
+
+                  <div className="space-y-10 text-lg leading-9 text-white/72 md:text-xl md:leading-10">
+                    {section.paragraphs.map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
+                  </div>
+                </section>
+              ))}
+            </div>
+          ) : (
+            <div className="space-y-10 text-lg leading-9 text-white/72 md:text-xl md:leading-10">
+              {article.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+          )}
+
+          {article.featuredArtworks?.length ? (
+            <aside className="mt-24 border-t border-white/10 pt-12">
+              <p className="text-xs uppercase tracking-[0.35em] text-[#D6B36A]">
+                Featured artwork
+              </p>
+
+              <div className="mt-8 space-y-10">
+                {article.featuredArtworks.map((artwork) => (
+                  <div key={artwork.slug}>
+                    <Link
+                      href={routes.artwork(artwork.slug)}
+                      className="heading inline-flex items-center gap-4 text-3xl transition-opacity hover:opacity-70 md:text-4xl"
+                    >
+                      {artwork.title}
+                      <span aria-hidden="true">→</span>
+                    </Link>
+                    <p className="mt-4 text-lg leading-8 text-white/60">
+                      {artwork.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </aside>
+          ) : null}
 
           {article.collectionSlug && article.collectionLabel ? (
             <aside className="mt-24 border-t border-white/10 pt-12">

@@ -25,12 +25,15 @@ export default function Navbar() {
 
           <Link href={routes.collections}>Collections</Link>
 
+          <Link href={routes.journal}>Journal</Link>
+
           <CartLink />
 
         </nav>
 
         <nav className="flex gap-5 uppercase tracking-[0.2em] text-xs text-white md:hidden">
           <Link href={routes.home}>Home</Link>
+          <Link href={routes.journal}>Journal</Link>
           <CartLink />
         </nav>
 
