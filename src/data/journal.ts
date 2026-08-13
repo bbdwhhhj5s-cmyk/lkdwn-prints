@@ -24,6 +24,109 @@ export type JournalArticle = {
 
 export const journalArticles: JournalArticle[] = [
   {
+    slug: "prague-light-stone-and-silence",
+    title: "Prague: Light, Stone and Silence",
+    excerpt:
+      "Photographing Prague through Gothic silhouettes, quiet waterways and the layered traces of time across the city.",
+    description:
+      "John McHugh reflects on photographing Prague, from the Gothic architecture of Prague Castle to Malá Strana’s red roofs, quiet canals and changing light.",
+    publishedAt: "2026-08-13",
+    location: "Prague, Czech Republic",
+    image: "/images/prague/prague-10.jpg",
+    imageAlt:
+      "St Vitus Cathedral and Prague Castle beneath a dramatic storm sky",
+    imageOrientation: "landscape",
+    collectionSlug: "prague",
+    collectionLabel: "Explore the Prague Collection",
+    paragraphs: [],
+    sections: [
+      {
+        heading: "",
+        paragraphs: [
+          "Prague often feels as though it has been built from accumulated time.",
+          "Gothic spires rise above Baroque domes. Weathered statues stand over the Vltava. Red roofs, painted façades and narrow streets gather closely together, while the city’s history remains visible in stone, plaster and shadow.",
+          "It is a place that encourages a slower kind of looking. The most memorable photographs are not always found in its grandest views, but in the relationships between architecture, light and silence.",
+        ],
+      },
+      {
+        heading: "A city seen in layers",
+        paragraphs: [
+          "Prague rarely presents itself as a single clean subject.",
+          "A statue may frame the castle beyond it. Trees interrupt a view across the river. Roofs and façades overlap until the city becomes a pattern of colour, texture and changing scale.",
+          "Those layers are part of its character. Rather than separating one landmark from everything around it, I look for ways in which the different periods and surfaces of Prague can remain in conversation inside the frame.",
+        ],
+      },
+      {
+        heading: "Stone beneath a changing sky",
+        paragraphs: [
+          "The architecture of Prague can feel permanent, but the weather continually changes how it is seen.",
+          "St Vitus Cathedral beneath a gathering storm becomes something different from the same building in clear morning light. Deep cloud can simplify the city into silhouette, while a sudden break in the sky reveals ornament, towers and distant rooftops.",
+          "I am drawn to that contrast between the endurance of stone and the brief life of light around it.",
+        ],
+      },
+      {
+        heading: "Quiet places within the city",
+        paragraphs: [
+          "Prague is not only monumental.",
+          "Along the Čertovka Canal, water moves quietly between old houses and gardens. In Malá Strana, streets rise and turn away from the busiest routes. From Petřín, the city can appear through a dark frame of trees, distant and almost still.",
+          "These quieter spaces offer a different rhythm. They allow the photograph to become less about recognition and more about atmosphere.",
+        ],
+      },
+      {
+        heading: "Looking up",
+        paragraphs: [
+          "Prague continually draws the eye upwards.",
+          "Spire, dome, clock tower and street lamp create strong vertical relationships against the sky. Looking up also removes much of the noise of street level and turns the city into a more graphic arrangement of line, form and open space.",
+          "A familiar façade can become something less literal when seen at a sharp angle, and a small element in the sky can suddenly give scale to the architecture beneath it.",
+        ],
+      },
+      {
+        heading: "Interpreting the atmosphere",
+        paragraphs: [
+          "The photograph begins on the street, but the creative process continues when I return to the image.",
+          "I work with tone, colour and contrast to bring forward the quality that first held my attention: the depth of a storm sky, the warmth of old plaster, the separation between a stone figure and the city beyond.",
+          "The aim is not to make Prague more dramatic than it was. It is to shape the photograph so that the finished print carries the atmosphere of being there.",
+        ],
+      },
+      {
+        heading: "Choosing a Prague photograph for your home",
+        paragraphs: [
+          "Prague offers both architectural drama and quieter visual detail.",
+          "A landscape view of the castle and cathedral can create scale across a larger wall. Portrait studies of statues, towers and rooftops bring height and structure to narrower spaces. Canal scenes and layered city views introduce warmth without demanding attention immediately.",
+          "The right photograph is the one that continues to reveal its relationships over time: a distant spire, a weathered surface or a brief line of light that was not the first thing you noticed.",
+        ],
+      },
+      {
+        heading: "What remains",
+        paragraphs: [
+          "What stays with me about Prague is the balance between presence and quietness.",
+          "Its architecture carries great visual weight, yet the city also offers moments of stillness: water beneath a bridge, a figure above the roofs, or light moving across stone.",
+          "Those are the moments I want the finished photographs to preserve — not Prague as a checklist of landmarks, but as a city that rewards returning to the image and looking again.",
+        ],
+      },
+    ],
+    featuredArtworks: [
+      {
+        slug: "cathedral-under-storm",
+        title: "Cathedral Under Storm",
+        description:
+          "St Vitus Cathedral and Prague Castle standing beneath a turbulent sky above Malá Strana.",
+      },
+      {
+        slug: "stone-witness",
+        title: "Stone Witness",
+        description:
+          "A timeworn figure watching over the Vltava with Prague Castle held softly in the distance.",
+      },
+      {
+        slug: "canal-through-mala-strana",
+        title: "Canal Through Malá Strana",
+        description:
+          "Warm afternoon light following the quiet canal between old houses and gardens.",
+      },
+    ],
+  },
+  {
     slug: "porto-in-blue-and-gold",
     title: "Porto in Blue and Gold: Photographing the City’s Light and Architecture",
     excerpt:
